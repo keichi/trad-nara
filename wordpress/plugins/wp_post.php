@@ -101,14 +101,46 @@ function wpost_post_post($post_id){
 add_action('admin_menu', 'wpost_addmenu');
 function wpost_addmenu() {
 	$name = '投稿POST設定';
-	add_options_page($name, $name, 10, basename(__FILE__),'wp_post_admin');
+	add_options_page($name, $name, 'manage_options', basename(__FILE__), 'wp_post_admin' );
 }
 
 function wp_post_admin(){
+	if ( !current_user_can( 'manage_options' ) )  {
+		wp_die( __( 'You do not have sufficient permissions to access this page.' ) );
+	}
+	
+	$hidden_field_name = 'wpost_submit_hidden';
+	
+	if( isset($_POST[ $hidden_field_name ]) && $_POST[ $hidden_field_name ] == 'Y' ) {
+		$wpost_post_url = $_POST["wpost_post_url"];
+		$wpost_delete_url = $_POST["wpost_delete_url"];
+		update_option( "wpost_post_url", $wpost_post_url );
+		update_option( "wpost_delete_url", $wpost_delete_url );
+		?>
+		<div class="updated"><p><strong><?php _e('settings saved.' ); ?></strong></p></div>
+		<?php
+		
+	}
+	
 ?>
-<p>Hello World</p>
+	<h2>WordPress POST 設定</h2>
+	<form method=post action="">
+	<input type="hidden" name="<?php echo $hidden_field_name; ?>" value="Y">
+	<h3>URL</h3>
+	<table class="form-table">
+	<tbody><tr>
+		<th><label for="wpost_post_url">投稿URL</label></th>
+		<td> <input name="wpost_post_url" id="wpost_post_url" type="text" value="<?php echo get_option("wpost_post_url"); ?>" class="regular-text code"></td>
+	</tr>
+	<tr>
+		<th><label for="wpost_delete_url">削除URL</label></th>
+		<td> <input name="wpost_delete_url" id="wpost_delete_url" type="text" value="<?php echo get_option("wpost_delete_url"); ?>" class="regular-text code"></td>
+	</tr>
+	</tbody></table>
+	
+	<p class="submit"><input type="submit" name="submit" id="submit" class="button-primary" value="変更を保存"  /></p>
+	</form>
 <?php
-
 }
 
 
