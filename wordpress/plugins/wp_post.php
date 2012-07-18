@@ -13,7 +13,7 @@ add_action("edit_post","wpost_post_post");
 add_action("delete_post","wpost_delete_post");
 
 function wpost_delete_post($post_id){
-	$url = get_option("wpost_delete_url","http://127.0.0.1/internal/delete");
+	$url = get_option("wpost_delete_url","http://localhost/internal/post/delete");
 	$data = array(
 		'id' => $post_id,
 	);
@@ -61,7 +61,7 @@ function wpost_post_post($post_id){
 	}
 
 	
-	$url = get_option("wpost_post_url","http://127.0.0.1/internal/post");
+	$url = get_option("wpost_post_url","http://localhost/internal/post/create");
 	//JSONに含めるデータ
 	
 	$author = get_userdata($post->post_author);
