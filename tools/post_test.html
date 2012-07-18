@@ -1,0 +1,35 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+    <head>
+        <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
+        <script type="text/javascript">
+            $(document).ready(function() {
+                $.post(
+                        'http://localhost:3000/internal/post/create/',
+                        {
+                            id      :   123,
+                            author  :   'Keichi Takahashi',
+                            title   :   'Test Post',
+                            date    :   undefined,
+                            lead    :   'This is the so called leading-sentence!',
+                            body    :   'Bla bla bla...',
+                            address :   'Suita, Osaka',
+                            label   :   'My home',
+                            created :   '2012/07/18 12:33:21',
+                            modified:   '2012/07/25 02:34:21',
+                            images  :   [
+                                'http://placehold.it/300x200',
+                                'http://placehold.it/300x200',
+                                'http://placehold.it/300x200',
+                            ],
+                        },
+                        function() {
+                            $('body').append('OK!');
+                        }
+                );
+            });
+        </script>
+    </head>
+    <body>
+    </body>
+</html>
