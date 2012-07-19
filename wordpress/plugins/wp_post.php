@@ -101,7 +101,7 @@ function wpost_post_post($post_id){
 		'author' => $author->display_name,
 		'title' => $post->post_title,
 		'lead' => wpost_get_lead($post),
-		'body' => $post->post_content,
+		'body' => apply_filters('the_content',$post->post_content),
 		'address' => get_post_meta($post->ID,"address",true),
 		'label' => get_post_meta($post->ID,"label",true),
 		'images' => $images,
