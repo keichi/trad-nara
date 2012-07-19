@@ -12,8 +12,28 @@ License: Undefined
 add_action("edit_post","wpost_post_post");
 add_action("delete_post","wpost_delete_post");
 
+
+function wpost_get_lead($post){
+	//要約を返す
+	$content = $post->post_content;
+	
+	$hasTeaser = false;
+	if ( preg_match('/<!--more(.*?)?-->/', $content, $matches) ) {
+		$content = explode($matches[0], $content, 2);
+		if ( !empty($matches[1]) && !empty($more_link_text) )
+			$more_link_text = strip_tags(wp_kses_no_null(trim($matches[1])));
+		
+		//moreタグあり
+		return $content[0];
+	}
+	
+	//moreタグなし
+	return $content;
+}
+
+
 function wpost_delete_post($post_id){
-	$url = get_option("wpost_delete_url","http://localhost/internal/post/delete");
+	$url = get_option("wpost_delete_url","http://127.0.0.1/internal/delete");
 	$data = array(
 		'id' => $post_id,
 	);
@@ -50,6 +70,7 @@ function wpost_post_post($post_id){
 			'numberposts' => 999,
 		));
 	$images = array();
+	$topimage = NULL;
 	foreach ($image_posts as $image) {
 		$meta = wp_get_attachment_metadata($image->ID);
 		$images[] = array(
@@ -58,31 +79,34 @@ function wpost_post_post($post_id){
 			'width' => intval($meta['width']),
 			'height' => intval($meta['height']),
 		);
+		if(is_null($topimage)){
+			$topimage = array(
+                        	'alt' => $image->post_excerpt,
+                        	'src' => $image->guid,
+                        	'width' => intval($meta['width']),
+                        	'height' => intval($meta['height']),
+                	);
+		}
 	}
 
 	
-	$url = get_option("wpost_post_url","http://localhost/internal/post/create");
-	//JSONに含めるデータ
-	
+	$url = get_option("wpost_post_url","http://127.0.0.1/internal/post");
 	$author = get_userdata($post->post_author);
-	
-	$data_for_json = array(
+	//POSTするデータ
+	$data = array(
 		'id' => $post->ID,
 		'created' => $post->post_date,
 		'modified' => $post->post_modified,
 		'author_id' => $post->post_author,
 		'author' => $author->display_name,
 		'title' => $post->post_title,
-		'lead' => $post->post_excerpt,
+		'lead' => wpost_get_lead($post),
 		'body' => $post->post_content,
 		'address' => get_post_meta($post->ID,"address",true),
 		'label' => get_post_meta($post->ID,"label",true),
 		'images' => $images,
+		'topimage' => $topimage,
 	);
-	$data = array(
-		'data' => json_encode($data_for_json),
-	);
-	
 	$options = array('http' => array(
 		'method' => 'POST',
 		'content' => http_build_query($data),
