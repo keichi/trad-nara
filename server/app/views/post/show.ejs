@@ -1,6 +1,51 @@
 <div class="page-header"><h1>post#show</h1></div>
 <ul>
 <% for (var i = 0; i < posts.length; i++) { %>
-    <li><%= posts[i].title %> by <%= posts[i].author %></li>
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Name</th>
+                <th>Value</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>ID</td>
+                <td><%= posts[i].post_id %></td>
+            </tr>
+            <tr>
+                <td>Title</td>
+                <td><%= posts[i].title %></td>
+            </tr>
+            <tr>
+                <td>Author</td>
+                <td><%= posts[i].author %></td>
+            </tr>
+            <tr>
+                <td>Lead</td>
+                <td><%- posts[i].lead %></td>
+            </tr>
+            <tr>
+                <td>Body</td>
+                <td><%- posts[i].body %></td>
+            </tr>
+            <tr>
+                <td>Address</td>
+                <td><%= posts[i].address %></td>
+            </tr>
+            <tr>
+                <td>Label</td>
+                <td><%= posts[i].label %></td>
+            </tr>
+            <tr>
+                <td>Created</td>
+                <td><%= posts[i].created %></td>
+            </tr>
+            <tr>
+                <td>Modified</td>
+                <td><%= posts[i].modified %></td>
+            </tr>
+        </tbody>
+    </table>
 <% } %>
 </ul>

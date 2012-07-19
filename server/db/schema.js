@@ -22,7 +22,7 @@
 */
 
 var Post = describe('Post', function () {
-    property('id', Number);
+    property('post_id', Number);
     property('author', String);
     property('title', String);
     property('date', Date);

@@ -1,5 +1,11 @@
-{ "development":
-  { "driver":   "memory"
+{
+    "development":
+    {   "driver":   "mysql",
+        "host"  :   "localhost",
+        "port"  :   "8889",
+        "username"  :   "root",
+        "password"  :   "root",
+        "database"  :   "tradnara_node"
   }
 , "test":
   { "driver":   "memory"
