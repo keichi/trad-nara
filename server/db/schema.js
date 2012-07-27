@@ -25,13 +25,13 @@ var Post = describe('Post', function () {
     property('post_id', Number);
     property('author', String);
     property('title', String);
-    property('date', Date);
     property('lead', Text);
     property('body', Text);
     property('address', String);
     property('label', String);
     property('created', Date);
     property('modified', Date);
+    property('topimage', String);
 });
 
 var Image = describe('Image', function () {
@@ -39,3 +39,4 @@ var Image = describe('Image', function () {
 });
 
 Post.hasMany(Image, {as: 'images', foreignKey: 'postId'});
+

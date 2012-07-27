@@ -1,6 +1,6 @@
 load('application');
 
-require('underscore');
+var _ = require('underscore');
 var async = require('async');
 
 action('create', function () {
@@ -14,7 +14,14 @@ action('create', function () {
                 );
         },
         function(results) {
-            var post = results.length > 0 ? results[0] : new Post();
+            var isNew = false;
+            var post;
+            if (results.length > 0) {
+                post = results[0];
+            } else {
+                post = new Post();
+                isNew = true;
+            }
 
             post.post_id = data.id;
             post.author = data.author;
@@ -25,11 +32,20 @@ action('create', function () {
             post.label = data.label;
             post.modified = new Date(data.modified);
             post.created = new Date(data.created);
-            if (data.images instanceof Array) {
-                _.each(data.images, function(url) {
+            post.topimage = data.topimage.src;
+
+            if ('length' in data.images) {
+                if (!isNew) {
+                    post.images(function(err, images) {
+                        _(images).each(function(image) {
+                            image.destroy();
+                        })
+                    });
+                }
+
+                _(data.images).each(function(img) {
                     var image = post.images.build();
-                    image.url = url;
-                    image.post(post);
+                    image.url = img.src;
                     image.save();
                 });
             }
