@@ -1,6 +1,5 @@
 <div class="page-header"><h1>post#show</h1></div>
 <ul>
-<% for (var i = 0; i < posts.length; i++) { %>
     <table class="table">
         <thead>
             <tr>
@@ -11,41 +10,40 @@
         <tbody>
             <tr>
                 <td>ID</td>
-                <td><%= posts[i].post_id %></td>
+                <td><%= post.post_id %></td>
             </tr>
             <tr>
                 <td>Title</td>
-                <td><%= posts[i].title %></td>
+                <td><%= post.title %></td>
             </tr>
             <tr>
                 <td>Author</td>
-                <td><%= posts[i].author %></td>
+                <td><%= post.author %></td>
             </tr>
             <tr>
                 <td>Lead</td>
-                <td><%- posts[i].lead %></td>
+                <td><%- post.lead %></td>
             </tr>
             <tr>
                 <td>Body</td>
-                <td><%- posts[i].body %></td>
+                <td><%- post.body %></td>
             </tr>
             <tr>
                 <td>Address</td>
-                <td><%= posts[i].address %></td>
+                <td><%= post.address %></td>
             </tr>
             <tr>
                 <td>Label</td>
-                <td><%= posts[i].label %></td>
+                <td><%= post.label %></td>
             </tr>
             <tr>
                 <td>Created</td>
-                <td><%= posts[i].created %></td>
+                <td><%= post.created %></td>
             </tr>
             <tr>
                 <td>Modified</td>
-                <td><%= posts[i].modified %></td>
+                <td><%= post.modified %></td>
             </tr>
         </tbody>
     </table>
-<% } %>
 </ul>

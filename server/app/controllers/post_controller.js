@@ -63,10 +63,10 @@ action('delete', function () {
 });
 
 action('show', function () {
-    Post.all(function(err, posts) {
+    Post.find(req.params.id, function(err, post) {
         render({
             title   :   'post#show',
-            posts   :   posts 
+            post   :    post
         });
     });
 });
