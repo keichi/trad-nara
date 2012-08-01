@@ -63,10 +63,15 @@ action('delete', function () {
 });
 
 action('show', function () {
+    layout(false);
+
     Post.find(req.params.id, function(err, post) {
-        render({
-            title   :   'post#show',
-            post   :    post
-        });
+        post.images(function(err, images) {
+            post.imageurls = images;
+            render({
+                title   :   'post#show',
+                post   :    post
+            });
+    });
     });
 });

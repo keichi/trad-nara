@@ -1,0 +1,49 @@
+<div class="page-header"><h1>post#show</h1></div>
+<ul>
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Name</th>
+                <th>Value</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>ID</td>
+                <td><%= post.post_id %></td>
+            </tr>
+            <tr>
+                <td>Title</td>
+                <td><%= post.title %></td>
+            </tr>
+            <tr>
+                <td>Author</td>
+                <td><%= post.author %></td>
+            </tr>
+            <tr>
+                <td>Lead</td>
+                <td><%- post.lead %></td>
+            </tr>
+            <tr>
+                <td>Body</td>
+                <td><%- post.body %></td>
+            </tr>
+            <tr>
+                <td>Address</td>
+                <td><%= post.address %></td>
+            </tr>
+            <tr>
+                <td>Label</td>
+                <td><%= post.label %></td>
+            </tr>
+            <tr>
+                <td>Created</td>
+                <td><%= post.created %></td>
+            </tr>
+            <tr>
+                <td>Modified</td>
+                <td><%= post.modified %></td>
+            </tr>
+        </tbody>
+    </table>
+</ul>
