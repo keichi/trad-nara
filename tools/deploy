@@ -1,0 +1,3 @@
+#!/bin/sh
+
+git push ssh://www-data@trads-jp.com/var/www/trads/trads.git master:master
