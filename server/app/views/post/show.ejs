@@ -2,98 +2,83 @@
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">
 <head>
 	<meta http-equiv="Content-Type" content="text/html;charset=UTF-8" />
-	<title>TRAD NARA  &raquo; Blog Archive   &raquo; Hello world!</title>
+	<title>TRAD NARA  &raquo; <%= post.title %></title>
 
-	<link href='http://fonts.googleapis.com/css?family=Droid+Serif' rel='stylesheet' type='text/css'>
-	<link href='http://fonts.googleapis.com/css?family=Droid+Sans' rel='stylesheet' type='text/css'>
-	<link rel="shortcut icon" href="https://trads-jp.com/wp/wp-content/themes/tradnara/images/favicon.ico">
+	<link rel="shortcut icon" href="https://trads-jp.com/wp/wp-content/themes/tradnara/images/favicon.ico"/>
 
-    <%- stylesheet_link_tag('post_style', 'flexslider') %>
+    <%- stylesheet_link_tag('http://fonts.googleapis.com/css?family=Droid+Serif', 'http://fonts.googleapis.com/css?family=Droid+Sans', 'post_style', 'flexslider') %>
     <%- javascript_include_tag('jquery-1.7.2.min', 'jquery.flexslider', 'post_script', 'http://maps.google.com/maps/api/js?sensor=false', 'jquery.gmap3') %>
-    <script type='text/javascript' src='http://maps.google.com/maps/api/js?sensor=false&#038;ver=1.0'></script>
 </head>
 <body>
 	<div id="wrapper">
     	<div id="header">
-        	<h1>TRAD NARA  &raquo; Blog Archive   &raquo; Hello world!</h1>
+        	<h1>TRAD NARA  &raquo; <%= post.title %></h1>
     	</div>
-<div id="container">
-	<div id="contents">
-	
-	   <div class="post">
-    	   <h1><a href="#" title="Hello world!"><%= post.title %></a></h1>    	   
-    	   <div class="util-buttons">
-    	       <ul>
-            	   <li><a class="share-toggle" href="#">SHARE</a></li>
-       	       </ul>
-    	   </div>
-    	   
-    	   <div class="share">
-                <a href="#">
-                   <img src="/images/icon/facebook_32.png" alt="facebook_32" width="32" height="32" /></a>
-                <a href="#">
-                   <img src="/images/icon/twitter_32.png" alt="twitter_32" width="32" height="32" /></a>
-                <a href="#">
-                   <img src="/images/icon/delicious_32.png" alt="delicious_32" width="32" height="32" /></a>
-                <a href="#">
-                   <img src="/images/icon/digg_32.png" alt="digg_32" width="32" height="32" /></a>
-                <a href="#">
-                   <img src="/images/icon/google_plus_32.png" alt="google_plus_32" width="32" height="32" /></a>
-                <a href="#">
-                   <img src="/images/icon/evernote_32.png" alt="evernote_32" width="32" height="32" /></a>
-                <a href="#">
-                   <img src="/images/icon/email_32.png" alt="email_32" width="32" height="32" /></a>
-            </div>    	     
-            <div class="flexslider">
-        	   <ul class="slides">
-                <% for(var i = 0; i < post.imageurls.length; i++) { %>
-            	   <li><img src="<%- post.imageurls[i].url %>"/></li>
-                <% } %>
-               </ul>
-            </div>
-                        
-            <p class="lead"><%- post.body %></p>
-            <div id="gmap">
-                <div class="address"><%= post.address %></div>
-                <div class="name"><%= post.label %></div>
-            </div>
-                        
-    	   <div class="info">
-    	       Written by the Trad Nara reporter <a href="#"><%= post.author %></a>, and posted on the <a href="#"><%= post.created %></a>.
-    	   </div>
-	   </div>
-	   
-	</div>
-	
-	</div>
-    	
-<div id="sidebar">
-    <ul>
-        <li class="widget-container"><form role="search" method="get" id="searchform" action="https://trads-jp.com/wp/" >
-	<div><label class="screen-reader-text" for="s">検索:</label>
-	<input type="text" value="" name="s" id="s" />
-	<input type="submit" id="searchsubmit" value="検索" />
-	</div>
-	</form></li>		<li class="widget-container">		<h2>最近の投稿</h2>		<ul>
-				<li><a href="https://trads-jp.com/wp/?p=1" title="Hello world!">Hello world!</a></li>
-				</ul>
-		</li><li class="widget-container"><h2>最近のコメント</h2><ul id="recentcomments"><li class="recentcomments"><a href="https://trads-jp.com/wp/?p=1#comment-1">Hello world!</a> に <a href='http://wordpress.org/' rel='external nofollow' class='url'>Mr WordPress</a> より</li></ul></li><li class="widget-container"><h2>アーカイブ</h2>		<ul>
-			<li><a href='https://trads-jp.com/wp/?m=201208' title='2012年8月'>2012年8月</a></li>
-		</ul>
-</li><li class="widget-container"><h2>カテゴリー</h2>		<ul>
-	<li class="cat-item cat-item-1"><a href="https://trads-jp.com/wp/?cat=1" title="未分類 に含まれる投稿をすべて表示">未分類</a>
-</li>
-		</ul>
-</li><li class="widget-container"><h2>メタ情報</h2>			<ul>
-			<li><a href="https://trads-jp.com/wp/wp-admin/">サイト管理</a></li>			<li><a href="https://trads-jp.com/wp/wp-login.php?action=logout&#038;_wpnonce=0cfaa22c38">ログアウト</a></li>
-			<li><a href="https://trads-jp.com/wp/?feed=rss2" title="このサイトを RSS2.0 で購読">投稿の <abbr title="Really Simple Syndication">RSS</abbr></a></li>
-			<li><a href="https://trads-jp.com/wp/?feed=comments-rss2" title="すべての投稿への最新コメントを RSS で購読">コメントの <abbr title="Really Simple Syndication">RSS</abbr></a></li>
-			<li><a href="http://ja.wordpress.org/" title="Powered by WordPress, state-of-the-art semantic personal publishing platform.">WordPress.org</a></li>
-						</ul>
-</li>    </ul>
-</div>            <div id="footer">
-                Copyright &copy; 2012 TRAD NARA. All Rights Reserved.
-            </div>
+        <div id="container">
+        	<div id="contents">
+        	   <div class="post">
+            	   <h1><a href="#" title="Hello world!"><%= post.title %></a></h1>    	   
+            	   <div class="util-buttons">
+            	       <ul>
+                    	   <li><a class="share-toggle" href="#">SHARE</a></li>
+               	       </ul>
+            	   </div>
+            	   
+            	   <div class="share">
+                        <a href="#">
+                           <img src="/images/icon/facebook_32.png" alt="facebook_32" width="32" height="32" /></a>
+                        <a href="#">
+                           <img src="/images/icon/twitter_32.png" alt="twitter_32" width="32" height="32" /></a>
+                        <a href="#">
+                           <img src="/images/icon/delicious_32.png" alt="delicious_32" width="32" height="32" /></a>
+                        <a href="#">
+                           <img src="/images/icon/digg_32.png" alt="digg_32" width="32" height="32" /></a>
+                        <a href="#">
+                           <img src="/images/icon/google_plus_32.png" alt="google_plus_32" width="32" height="32" /></a>
+                        <a href="#">
+                           <img src="/images/icon/evernote_32.png" alt="evernote_32" width="32" height="32" /></a>
+                        <a href="#">
+                           <img src="/images/icon/email_32.png" alt="email_32" width="32" height="32" /></a>
+                    </div>    	     
+                    <div class="flexslider">
+                	   <ul class="slides">
+                        <% for(var i = 0; i < post.imageurls.length; i++) { %>
+                    	   <li><img src="<%- post.imageurls[i].url %>"/></li>
+                        <% } %>
+                       </ul>
+                    </div>
+                                
+                    <%- post.body %>
+                    <div id="gmap">
+                        <div class="address"><%= post.address %></div>
+                        <div class="name"><%= post.label %></div>
+                    </div>
+                                
+            	   <div class="info">
+            	       Written by the Trad Nara reporter <a href="#"><%= post.author %></a>, and posted on the <a href="#"><%= post.created %></a>.
+            	   </div>
+        	   </div>
+        	</div>
+    	</div>
+                	
+        <div id="sidebar">
+            <ul>
+                <li class="widget-container">
+                    <h2>Advertisement</h2>	
+                    <ul>
+        				<li>Foo</li>
+                        <li>Hoge</li>
+                        <li>Foo Hoge</li>
+                        <li>Foo Foo</li>
+                        <li>Foo</li>
+        			</ul>
+        		</li>
+        	</ul>
         </div>
-    </body>
+
+        <div id="footer">
+            Copyright &copy; 2012 TRAD NARA. All Rights Reserved.
+        </div>
+    </div>
+</body>
 </html>
