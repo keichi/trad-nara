@@ -49,10 +49,13 @@
                     </div>
                                 
                     <%- post.body %>
+
+                    <% if(post.address) { %>
                     <div id="gmap">
                         <div class="address"><%= post.address %></div>
                         <div class="name"><%= post.label %></div>
                     </div>
+                    <% } %>
                                 
             	   <div class="info">
             	       Written by the Trad Nara reporter <a href="#"><%= post.author %></a>, and posted on the <a href="#"><%= post.created %></a>.
