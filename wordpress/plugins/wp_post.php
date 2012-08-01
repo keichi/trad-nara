@@ -11,7 +11,7 @@ License: Undefined
 
 add_action("edit_post","wpost_post_post");
 add_action("delete_post","wpost_delete_post");
-
+add_image_size("node_thumb",300,200,true);
 
 function wpost_get_lead($post){
 	//要約を返す
@@ -80,11 +80,12 @@ function wpost_post_post($post_id){
 			'height' => intval($meta['height']),
 		);
 		if(is_null($topimage)){
+			$image_src = wp_get_attachment_image_src($image->ID,"node_thumb");
 			$topimage = array(
                         	'alt' => $image->post_excerpt,
-                        	'src' => $image->guid,
-                        	'width' => intval($meta['width']),
-                        	'height' => intval($meta['height']),
+							'src' => $image_src[0],
+                        	'width' => intval($image_src[1]),
+                        	'height' => intval($image_src[2]),
                 	);
 		}
 	}
