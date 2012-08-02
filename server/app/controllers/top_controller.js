@@ -7,6 +7,13 @@ action('home', function () {
         render({
             title: "top#home",
             posts: posts,
+            userName: req.session.user ? req.session.user.name : "Anonymous"
         });
     });
+});
+
+action('login', function() {
+	render({
+		title: "Login",
+	});
 });
