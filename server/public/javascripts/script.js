@@ -41,14 +41,16 @@ $(document).ready(function() {
     
     function init() {
         $container.addClass('jsReady');
-        $box.css({
-            'left'  :   0,
-            'top'   :   0,
-/*
-            'left'  :   (initWidth - w) * 0.5,
-            'top'   :   (initHeight - h) * 0.5,
-*/
-        });
+        if($box.size()>0){
+            $box.css({
+                'left'  :   0,
+                'top'   :   0,
+            });
+        }else{
+            $('#navigation').show(200);
+            $('#footer').show(200);
+            $('#header').show(200);
+        }
     }
     
 	function layout(e) {
