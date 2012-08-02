@@ -167,3 +167,13 @@ body {
     white-space: nowrap;
     overflow: hidden;
 }
+
+
+#loginlinks {
+    text-align: center;
+}
+
+#loginlinks ul {
+    list-style-type: none;
+}
+
