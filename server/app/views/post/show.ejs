@@ -25,11 +25,11 @@
             	   </div>
             	   
             	   <div class="share">
-						<a href="http://www.facebook.com/share.php?u=<%- url %>">
+						<a href="http://www.facebook.com/share.php?u=<%= uriencode(url) %>">
                            <img src="/images/icon/facebook_32.png" alt="facebook_32" width="32" height="32" /></a>
                         <a href="http://twitter.com/home?status=<%= post.title %> <%- url %>">
                            <img src="/images/icon/twitter_32.png" alt="twitter_32" width="32" height="32" /></a>
-                        <a href="http://del.icio.us/post?v=3&noui=yes&jump=close&url=<%- url %>&title=<%= post.title %>">
+                        <a href="http://del.icio.us/post?v=3&noui=yes&jump=close&url=<%= uriencode(url) %>&title=<%= uriencode(post.title) %>">
                            <img src="/images/icon/delicious_32.png" alt="delicious_32" width="32" height="32" /></a>
                         <a href="#">
                            <img src="/images/icon/digg_32.png" alt="digg_32" width="32" height="32" /></a>
