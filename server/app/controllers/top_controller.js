@@ -1,11 +1,15 @@
 load('application');
 
+before(function() {
+	this.user = req.session.user;
+	next();
+});
+
 action('home', function () {
     Post.all(function(err, posts) {
         render({
             title: "top#home",
-            posts: posts,
-            userName: req.session.user ? req.session.user.name : "Anonymous"
+            posts: posts
         });
     });
 });

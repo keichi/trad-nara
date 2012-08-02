@@ -2,10 +2,10 @@ var express = require('express');
 var everyauth = require('everyauth');
 
 everyauth.everymodule
-.handleLogout( function(req, res){
-        req.logout(); // The logout method is added for you by everyauth, too
-        this.redirect(res, this.logoutRedirectPath());
-    })
+// .handleLogout( function(req, res){
+//         req.logout(); // The logout method is added for you by everyauth, too
+//         this.redirect(res, this.logoutRedirectPath());
+//     })
 .moduleErrback(function(err){
     //この処理はエラー回避に必要
     console.log(err)
