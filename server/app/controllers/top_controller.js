@@ -13,6 +13,8 @@ action('home', function () {
 });
 
 action('login', function() {
+	layout(false);
+
 	render({
 		title: "Login",
 	});
