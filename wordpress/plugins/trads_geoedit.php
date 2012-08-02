@@ -10,20 +10,12 @@ License: Undefined
 */
 
 
-
-function add_geo_edit(){
-	?>
-	
-	<p>ここに入るはず</p>
-	<?php
-
-}
-
-add_action('dbx_post_advanced', 'add_geo_edit');
+add_action('admin_menu', 'add_geoedit_box');
+add_action('save_post', 'geoedit_save_postdata');
 
 
-
-?>function add_geoedit_box(){
+//編集ボックスの追加
+function add_geoedit_box(){
 	add_meta_box( 'geoedit_sectionid', "Geotag",'geoedit_inner_custom_box', 'post', 'advanced' );
 }
 
