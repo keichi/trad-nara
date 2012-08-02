@@ -31,6 +31,26 @@ everyauth.twitter
   )
 .redirectPath('/');
 
+
+everyauth.facebook
+.appId('142112035927729')
+.appSecret('c3490c436f906214119dc69a59912375')
+.findOrCreateUser(
+    function(session,accessToken,accessTokExtra,fbUserMetadata){
+        var promise = this.Promise();
+        promise.fulfill();
+        
+        var user = {};
+        user.name = fbUserMetadata.id;
+        user.accessToken = accessToken;
+        user.accessTokExtra = accessTokExtra;
+        session.user = user;
+                  
+        return user;  
+    }
+)
+.redirectPath('/');
+
 app.configure(function(){
     var cwd = process.cwd();
     
