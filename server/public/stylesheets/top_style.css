@@ -155,6 +155,7 @@ body {
     height: 100px;
     display: none;
     margin-bottom: 10px;
+    position: relative;
 }
 
 #header h1 {
@@ -168,6 +169,12 @@ body {
     overflow: hidden;
 }
 
+#auth {
+    float: right;
+    position: absolute;
+    bottom: 0;
+    right: 0;
+}
 
 #loginlinks {
     text-align: center;
