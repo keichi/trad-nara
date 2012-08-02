@@ -34,10 +34,16 @@ action('create', function () {
             post.created = new Date(data.created);
             post.topimage = data.topimage.src;
 
+
+            console.log('--------- dump start ------------');
+            console.log(data.images);
+            console.log(isNew);
+            console.log('--------- dump finish ------------');
+
             if ('length' in data.images) {
                 if (!isNew) {
                     post.images(function(err, images) {
-                        _(images).each(function(image) {
+                         _(images).each(function(image) {
                             image.destroy();
                         })
                     });
