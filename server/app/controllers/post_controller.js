@@ -13,7 +13,7 @@ action('create', function () {
                 function(err, results) {cb(null, results);}
                 );
         },
-        function(results) {
+        function(results, cb) {
             var isNew = false;
             var post;
             if (results.length > 0) {
@@ -22,6 +22,9 @@ action('create', function () {
                 post = new Post();
                 isNew = true;
             }
+
+            console.log(results);
+            console.log(post);
 
             post.post_id = data.id;
             post.author = data.author;
@@ -33,13 +36,9 @@ action('create', function () {
             post.modified = new Date(data.modified);
             post.created = new Date(data.created);
             post.topimage = data.topimage.src;
-
-
-            console.log('--------- dump start ------------');
-            console.log(data.images);
-            console.log(isNew);
-            console.log('--------- dump finish ------------');
-
+            post.save(function(err) {cb(null, post, isNew)});
+        },
+        function (post, isNew) {
             if ('length' in data.images) {
                 if (!isNew) {
                     post.images(function(err, images) {
@@ -55,8 +54,6 @@ action('create', function () {
                     image.save();
                 });
             }
-            post.save();
-
             send("successful");
         }
         ]);
