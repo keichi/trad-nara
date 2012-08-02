@@ -69,8 +69,9 @@ action('show', function () {
         post.images(function(err, images) {
             post.imageurls = images;
             render({
-                title   :   'post#show',
-                post   :    post
+                title  :   'post#show',
+                post   :    post,
+                url    :    'http://' + req.host + req.path
             });
     });
     });
