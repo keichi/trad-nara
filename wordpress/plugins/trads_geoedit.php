@@ -42,25 +42,21 @@ function geoedit_save_postdata($post_id){
 
 	//認証を通っていない場合は実行しないで終る
 	if ( !wp_verify_nonce( $_POST['geoedit_noncename'], plugin_basename(__FILE__) )) {
-		die("1");
 		return $post_id;
 	}
 
 	//自動保存ルーチンなら何もしない
 	if ( defined('DOING_AUTOSAVE') && DOING_AUTOSAVE ){
-		die("2");
 		return $post_id;
 	}
 	
 	// パーミッションチェック
 	if ( 'page' == $_POST['post_type'] ) {
 		if ( !current_user_can( 'edit_page', $post_id ) ){
-		die("3");
 			return $post_id;
 		}
 	} else {
 		if ( !current_user_can( 'edit_post', $post_id ) ){
-		die("4");
 			return $post_id;
 		}
 	}
