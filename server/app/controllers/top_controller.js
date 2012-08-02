@@ -1,8 +1,6 @@
 load('application');
 
 action('home', function () {
-    layout(false);
-    
     Post.all(function(err, posts) {
         render({
             title: "top#home",
@@ -13,8 +11,6 @@ action('home', function () {
 });
 
 action('login', function() {
-	layout(false);
-
 	render({
 		title: "Login",
 	});
