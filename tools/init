@@ -1,0 +1,6 @@
+#!/bin/sh
+
+npm install -l
+npm install async underscore mysql everyauth
+railway db update
+
