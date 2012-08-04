@@ -9,7 +9,7 @@ action('create', function () {
     async.waterfall([
         function(cb) {
             Post.all(
-                {where: {post_id: data.id}},
+                {where: {postId: data.id}},
                 function(err, results) {cb(null, results);}
                 );
         },
@@ -26,7 +26,7 @@ action('create', function () {
             console.log(results);
             console.log(post);
 
-            post.post_id = data.id;
+            post.postId = data.id;
             post.author = data.author;
             post.title = data.title;
             post.lead = data.lead;
@@ -36,6 +36,7 @@ action('create', function () {
             post.modified = new Date(data.modified);
             post.created = new Date(data.created);
             post.topimage = data.topimage.src;
+
             post.save(function(err) {cb(null, post, isNew)});
         },
         function (post, isNew) {

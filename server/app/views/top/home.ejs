@@ -8,6 +8,6 @@
 			<h2 class="post-title"><a href="/post/<%- posts[i].id %>"><%= posts[i].title %></a></h2>
 			<div class="post-author"><span class="post-author-by">by </span><a href="#"><%= posts[i].author %></a></div>
 		</div>
-		<div class="meta">1234 Views, 23 Likes</div>
+		<div class="meta"><%= posts[i].viewCount %> Views, 0 Likes</div>
 	</div>
 <% } %>

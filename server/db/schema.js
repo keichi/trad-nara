@@ -22,7 +22,7 @@
 */
 
 var Post = describe('Post', function () {
-    property('post_id', Number);
+    property('postId', Number);
     property('author', String);
     property('title', String);
     property('lead', Text);
@@ -32,6 +32,7 @@ var Post = describe('Post', function () {
     property('created', Date);
     property('modified', Date);
     property('topimage', String);
+    property('viewCount', {type: Number, default: 0});
 });
 
 var Image = describe('Image', function () {
