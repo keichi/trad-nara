@@ -23,9 +23,6 @@ action('create', function () {
                 isNew = true;
             }
 
-            console.log(results);
-            console.log(post);
-
             post.postId = data.id;
             post.author = data.author;
             post.title = data.title;
