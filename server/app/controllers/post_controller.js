@@ -32,12 +32,14 @@ action('create', function () {
             post.label = data.label;
             post.modified = new Date(data.modified);
             post.created = new Date(data.created);
-            post.topimage = data.topimage.src;
+            if (data.topimage != undefined) {
+               post.topimage = data.topimage.src;
+            }
 
             post.save(function(err) {cb(null, post, isNew)});
         },
         function (post, isNew) {
-            if ('length' in data.images) {
+            if (data.images != undefined && 'length' in data.images) {
                 if (!isNew) {
                     post.images(function(err, images) {
                          _(images).each(function(image) {
