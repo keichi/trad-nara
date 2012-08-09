@@ -14,7 +14,7 @@ a:hover {
 
 body {
     background-color: #000;
-    background-image: url('bg.png');
+    background-image: url('/images/bg.png');
     font-family: "Arial", "Geneva", "Lucida Grande", "Verdana", sans-serif; 
 }
 
