@@ -10,10 +10,6 @@
 $(document).ready(function() {
     $('.flexslider').flexslider();
     
-    $('#contents .post a.share-toggle').click(function() {
-        $('.share').slideToggle('fast');
-    });
-    
     $('#sidebar ul li.widget-container img').wrap('<div class="ad-image"></div>');
     $('.ad-image').css('background-color', 'white');
     $('.ad-image').css('margin', '5px 0');

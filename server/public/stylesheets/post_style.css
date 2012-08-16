@@ -14,10 +14,9 @@ Author URI: http://keichi.net/
 
 body {
     background-color: #000;
-/*    font-family: "Arial", "Geneva", "Lucida Grande", "Verdana", sans-serif;  */
-    font-family: 'Droid Sans', sans-serif;
-   font-weight: 300;
-   background-image: url('/images/bg.png');
+    font-family: "HelveticaNeueLight", "HelveticaNeue-Light", "Helvetica Neue Light", "HelveticaNeue", "Helvetica Neue", 'TeXGyreHerosRegular', "Helvetica", "Tahoma", "Geneva", "Arial", sans-serif; font-weight:300; font-stretch:normal;
+    font-weight: 300;
+    background-image: url('/images/bg.png');
 }
 
 a {
@@ -33,7 +32,7 @@ a:hover {
     text-align: left;  
     width: 90%;  
     margin: 0 auto;
-    color: #eee;
+    color: #d0d0d0;
     max-width: 1100px;
 }  
 
@@ -67,18 +66,10 @@ a:hover {
     line-height: 1.2em;
 }
 
-#contents .post .util-buttons ul {
-    text-align: right;
-}
-
-#contents .post .util-buttons ul li {
-    list-style-type: none;
-    display: inline-block;
-}
-
 #contents .post .share {
-    display: none;
     width: 100%;
+    margin-top: 5px;
+    margin-left: 5px;
 }
 
 #contents .post h1 {
@@ -87,7 +78,7 @@ a:hover {
     padding: 0.25em 0em 0.25em 0.5em;
     border-bottom: 1px dotted #999;
     border-left: 5px solid #999;
-    font-family: 'Droid Serif', serif;
+    font-family: "HelveticaNeueBlack", "HelveticaNeue-Black", "Helvetica Neue Black", "HelveticaNeue", "Helvetica Neue", 'TeXGyreHerosBold', "Arial Black", sans-serif; font-weight:800; font-stretch:normal;
     line-height: 1.5em;
 }
 
@@ -98,14 +89,21 @@ a:hover {
 #contents .post p {
     margin: 1em 0px;
     text-indent: 1em;
-    font-family: 'Droid Sans', sans-serif;
-    letter-spacing: 0.1em;
+    letter-spacing: 0.05em;
     line-height: 1.5em;
-    text-shadow: 1px 1px 0px #555;
 }
 
 #contents .post p.lead {
     font-weight: bold;
+}
+
+#contents .post p a {
+    text-decoration: underline;
+    color: #ffffff;
+}
+
+#contents .post p a:hover {
+    color: #e44a24;
 }
 
 #contents .post #gmap {

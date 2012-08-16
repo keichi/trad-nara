@@ -6,7 +6,7 @@
 
 	<link rel="shortcut icon" href="https://trads-jp.com/wp/wp-content/themes/tradnara/images/favicon.ico"/>
 
-    <%- stylesheet_link_tag('http://fonts.googleapis.com/css?family=Droid+Serif', 'http://fonts.googleapis.com/css?family=Droid+Sans', 'post_style', 'flexslider') %>
+    <%- stylesheet_link_tag('post_style', 'flexslider') %>
     <%- javascript_include_tag('jquery-1.7.2.min', 'jquery.flexslider', 'post_script', 'http://maps.google.com/maps/api/js?sensor=false', 'jquery.gmap3') %>
 </head>
 <body>
@@ -18,12 +18,6 @@
         	<div id="contents">
         	   <div class="post">
             	   <h1><a href="#" title="Hello world!"><%= post.title %></a></h1>    	   
-            	   <div class="util-buttons">
-            	       <ul>
-                    	   <li><a class="share-toggle" href="#">SHARE</a></li>
-               	       </ul>
-            	   </div>
-            	   
             	   <div class="share">
 						<a href="http://www.facebook.com/share.php?u=<%= uriencode(url) %>">
                            <img src="/images/icon/facebook_32.png" alt="facebook_32" width="32" height="32" /></a>
