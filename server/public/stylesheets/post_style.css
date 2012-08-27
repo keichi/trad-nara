@@ -190,6 +190,7 @@ a:hover {
   
 #footer{
     margin-top: 10px;
+    margin-bottom: 10px;
     border-top: 3px solid #333;
     padding: 5px;
     clear: both;  
