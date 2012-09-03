@@ -7,7 +7,7 @@
 	<link rel="shortcut icon" href="https://trads-jp.com/wp/wp-content/themes/tradnara/images/favicon.ico"/>
 
     <%- stylesheet_link_tag('post_style', 'flexslider') %>
-    <%- javascript_include_tag('jquery-1.7.2.min', 'jquery.flexslider', 'post_script', 'http://maps.google.com/maps/api/js?sensor=false', 'jquery.gmap3') %>
+    <%- javascript_include_tag('jquery-1.7.2.min', 'jquery.flexslider', 'post_script', 'http://maps.google.com/maps/api/js?sensor=false') %>
 </head>
 <body>
 	<div id="wrapper">
@@ -35,7 +35,10 @@
                     <div class="flexslider">
                 	   <ul class="slides">
                         <% for(var i = 0; i < post.imageurls.length; i++) { %>
-                    	   <li><img src="<%- post.imageurls[i].url %>"/></li>
+                            <li>
+                                <img src="<%- post.imageurls[i].url %>"/>
+                                <p class="flex-caption">This is a photo from Keichi Takahashi</p>
+                            </li>
                         <% } %>
                        </ul>
                     </div>
@@ -43,10 +46,11 @@
                     <%- post.body %>
 
                     <% if(post.address) { %>
-                    <div id="gmap">
+                    <div id="mapinfo">
                         <div class="address"><%= post.address %></div>
                         <div class="name"><%= post.label %></div>
                     </div>
+                    <div id="gmap"></div>
                     <% } %>
                                 
             	   <div class="info">

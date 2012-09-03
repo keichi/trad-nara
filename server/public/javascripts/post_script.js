@@ -22,48 +22,55 @@ $(document).ready(function() {
     });
     
     // Googleマップの埋め込み
-	var gmap = $("#gmap").gmap3({
-		address: $('#gmap .address').text(),
-		zoom: 15,              // ズームレベル
-		
-		// 各コントロールの表示／非表示
-		navigationControl: true,
-		mapTypeControl: false,
-		scaleControl: true,
-		
-		// マーカーの設置
-		markers: [
-			{
-        		address:  $('#gmap .address').text(),
-                title: $('#gmap .name').text(),
-                content: '<div class="location-name">{0}</div><div class="location-address">{1}</div><div class="location-gmap">\
+	var gmg = new google.maps.Geocoder(), map, center, mk, iw;
+    gmg.geocode({
+		'address': $('#mapinfo .address').text()
+	}, function(results, status) {
+		if (status == google.maps.GeocoderStatus.OK) {
+			center = results[0].geometry.location;
+			initialize();
+			iw = new google.maps.InfoWindow({
+                    content: '<div class="location-name">{0}</div><div class="location-address">{1}</div><div class="location-gmap">\
                     <a href="https://maps.google.com/maps?q={2}">Open in Google Maps</a></div>'.format(
-                     $('#gmap .name').text(),
-                     $('#gmap .address').text(),
-                    $('#gmap .address').text()),
-                openInfo: true
-			}
-		]
-	
-	}).data('gmap');
-	
-	// カスタムマップタイプを設定
-	var myStyledMapType = new google.maps.StyledMapType(
-		[
-			{
-				featureType: "all",
-				elementType: "all",
+                     $('#mapinfo .name').text(),
+                     $('#mapinfo .address').text(),
+                    $('#mapinfo .address').text())
+            });
+            mk = new google.maps.Marker({//ここからマーカーの設定
+            	map: map,
+            	position: results[0].geometry.location,
+                title: $('#mapinfo .name').text()
+            });
+            iw.open(map, mk);
+            google.maps.event.addListener(mk, 'click', function() {
+			    iw.open(map,mk);
+			});
+		}
+	});
+
+	function initialize() {
+		var options = {
+			center: center,
+			zoom: 16,
+			mapTypeId: google.maps.MapTypeId.ROADMAP,
+			scrollwheel: false,
+			panControlOptions: {
+				position: google.maps.ControlPosition.TOP_RIGHT
+			},
+			zoomControlOptions: {
+				position: google.maps.ControlPosition.TOP_RIGHT
+			},
+			mapTypeControlOptions: {
+				position: google.maps.ControlPosition.TOP_CENTER
+			},
+			styles: [{
 				stylers: [
-					{ hue: '#1f8dc2' },
-					{ lightness: 10 },
-					{ saturation: 10 },
-					{ gamma: .9 }
+				{ hue: "#ef454a" },
+				{ gamma: 1.90 },
+				{ saturation: 80 }
 				]
-			}
-		]
-	);
-	
-	// カスタムマップタイプの登録
-	// gmap.mapTypes.set('myMapType', myStyledMapType);
-	// gmap.setMapTypeId('myMapType');
+			}]
+		};
+		map = new google.maps.Map($("#gmap").get(0), options);
+	}
 });
