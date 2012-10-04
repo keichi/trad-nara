@@ -18,6 +18,7 @@ $(document).ready(function() {
 */
     });
     
+    /*
     $('#navigation ul li a').hover(function() {
 		$(this).stop().animate({ backgroundColor: "#555" }, 400);
 		$('#navigation').stop().animate({
@@ -30,7 +31,7 @@ $(document).ready(function() {
 		  'border-top-color'  :   "#aaa",
 		  'border-bottom-color' : "#aaa"
 		  }, 400);
-	});
+	});*/
 	
 	$('.top-scroll').click(function() {
         $(this).blur();
