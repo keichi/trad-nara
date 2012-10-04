@@ -12,26 +12,26 @@
 <body>
 	<div id="wrapper">
     	<div id="header">
-        	<h1>TRAD NARA  &raquo; <%= post.title %></h1>
+        	<a href="/"><h1>TRAD NARA  &raquo; <%= post.title %></h1></a>
     	</div>
         <div id="container">
         	<div id="contents">
+               <h1><a href="#" title="Hello world!"><%= post.title %></a></h1>         
+               <div class="share">
+                    <a href="http://www.facebook.com/share.php?u=<%= uriencode(url) %>">
+                       <img src="/images/icon/facebook_32.png" alt="facebook_32" width="32" height="32" /></a>
+                    <a href="http://twitter.com/home?status=<%= post.title %> <%- url %>">
+                       <img src="/images/icon/twitter_32.png" alt="twitter_32" width="32" height="32" /></a>
+                    <a href="http://del.icio.us/post?v=3&noui=yes&jump=close&url=<%= uriencode(url) %>&title=<%= uriencode(post.title) %>">
+                       <img src="/images/icon/delicious_32.png" alt="delicious_32" width="32" height="32" /></a>
+                    <a href="http://digg.com/submit?url=<%= uriencode(url) %>&phase=2">
+                       <img src="/images/icon/digg_32.png" alt="digg_32" width="32" height="32" /></a>
+                    <a href="https://plus.google.com/share?url=<%= uriencode(url) %>">
+                       <img src="/images/icon/google_plus_32.png" alt="google_plus_32" width="32" height="32" /></a>
+                    <a href="mailto:?subject=Share%20it&amp;body=<%= uriencode(url) %>">
+                       <img src="/images/icon/email_32.png" alt="email_32" width="32" height="32" /></a>
+                </div>
         	   <div class="post">
-            	   <h1><a href="#" title="Hello world!"><%= post.title %></a></h1>    	   
-            	   <div class="share">
-						<a href="http://www.facebook.com/share.php?u=<%= uriencode(url) %>">
-                           <img src="/images/icon/facebook_32.png" alt="facebook_32" width="32" height="32" /></a>
-                        <a href="http://twitter.com/home?status=<%= post.title %> <%- url %>">
-                           <img src="/images/icon/twitter_32.png" alt="twitter_32" width="32" height="32" /></a>
-                        <a href="http://del.icio.us/post?v=3&noui=yes&jump=close&url=<%= uriencode(url) %>&title=<%= uriencode(post.title) %>">
-                           <img src="/images/icon/delicious_32.png" alt="delicious_32" width="32" height="32" /></a>
-                        <a href="http://digg.com/submit?url=<%= uriencode(url) %>&phase=2">
-                           <img src="/images/icon/digg_32.png" alt="digg_32" width="32" height="32" /></a>
-                        <a href="https://plus.google.com/share?url=<%= uriencode(url) %>">
-                           <img src="/images/icon/google_plus_32.png" alt="google_plus_32" width="32" height="32" /></a>
-                        <a href="mailto:?subject=Share%20it&amp;body=<%= uriencode(url) %>">
-                           <img src="/images/icon/email_32.png" alt="email_32" width="32" height="32" /></a>
-                    </div>    	     
                     <div class="flexslider">
                 	   <ul class="slides">
                         <% for(var i = 0; i < post.imageurls.length; i++) { %>
