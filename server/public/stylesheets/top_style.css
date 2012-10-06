@@ -13,8 +13,7 @@ a:hover {
 }
 
 body {
-    background-color: #000;
-    background-image: url('/images/bg.png');
+    background-color: rgb(50, 53, 58);
     font-family: "Arial", "Geneva", "Lucida Grande", "Verdana", sans-serif; 
 }
 
@@ -40,9 +39,13 @@ body {
     color: #ccc;
     position: relative; 
     
-    border-radius: 3px;
-    -moz-border-radius: 3px;
-    -webkit-border-radius: 3px;
+    border-radius: 5px;
+    -moz-border-radius: 5px;
+    -webkit-border-radius: 5px;
+
+    -webkit-box-shadow: 0 1px 4px #000;
+    -moz-box-shadow: 0 1px 4px #000;
+    box-shadow: 0 1px 4px #000;
 }
 
 #container.jsReady .post-box {
@@ -73,7 +76,10 @@ body {
 .post-box .title-author {
     margin-top: 20px;
     margin-left: 20px;
+    margin-right: 20px;
     height: 80px;
+
+    border-bottom: 1px solid #a0a0a0;
 }
 
 .post-box .title-author h2.post-title a {
@@ -92,9 +98,7 @@ body {
 
 .post-box .meta {
     font-size: 1em;
-    border-top: 1px solid #777;
-    padding-top: 15px;
-    padding-left: 5px;
+    border-top: 1px solid #000;
     
     margin-left: 20px;
     margin-right: 20px;
@@ -103,12 +107,46 @@ body {
     vertical-align: middle;
 }
 
+.post-box .meta .meta-stats {
+    float: left;
+    width: 200px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
+
+.post-box .meta .meta-favorite {
+    float: right;
+    width: 50px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    text-align: center;
+    border-left: 1px solid #a0a0a0;
+}
+
+.post-box .meta .meta-view i {
+    margin-left: 7px;
+    margin-right: 5px;
+}
+
+.post-box .meta .meta-view {
+    margin-right: 5px;
+}
+
+.post-box .meta .meta-like i {
+    margin-right: 5px;
+}
+
+.post-box .meta .meta-like {
+    margin-right: 5px;
+}
+
 #footer {
     border-top: 1px solid #777;
     padding-top: 5px;
     text-align: center;
     font-size: 0.9em;
     display: none;
+    text-shadow: 0px 1px 0px #000;
 }
 
 #navigation {
@@ -117,12 +155,50 @@ body {
     border-radius: 5px;
     -moz-border-radius: 5px;
     -webkit-border-radius: : 5px;
+
+    -webkit-box-shadow: 0 1px 0 rgba(255, 255, 255, 0.4) , 0 0 10px rgba(0, 0, 0, 0.1);
+    -moz-box-shadow: 0 1px 0 rgba(255, 255, 255, 0.4) , 0 0 10px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 1px 0 rgba(255, 255, 255, 0.4) , 0 0 10px rgba(0, 0, 0, 0.1);
+    border: 1px solid #aeaeae;
+
+    background-color: #dadada;
+    background-image: -moz-linear-gradient(top, #eeeeee, #bbbbbb);
+    background-image: -webkit-gradient(linear, 0 0, 0 100%, from(#eeeeee), to(#bbbbbb));
+    background-image: -webkit-linear-gradient(top, #eeeeee, #bbbbbb);
+    background-image: -o-linear-gradient(top, #eeeeee, #bbbbbb);
+    background-image: linear-gradient(to bottom, #eeeeee, #bbbbbb);
+    background-repeat: repeat-x;
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#ffeeeeee', endColorstr='#ffbbbbbb', GradientType=0);
+
+    text-shadow: 0px 1px 0px #fff;
+    height: 25px;
 }
 
 #navigation li {
     list-style-type: none;
-    display: inline-block;
+    float: left;
+
+    background-color: #dadada;
+    background-image: -moz-linear-gradient(top, #eeeeee, #bbbbbb);
+    background-image: -webkit-gradient(linear, 0 0, 0 100%, from(#eeeeee), to(#bbbbbb));
+    background-image: -webkit-linear-gradient(top, #eeeeee, #bbbbbb);
+    background-image: -o-linear-gradient(top, #eeeeee, #bbbbbb);
+    background-image: linear-gradient(to bottom, #eeeeee, #bbbbbb);
+    background-repeat: repeat-x;
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#ffeeeeee', endColorstr='#ffbbbbbb', GradientType=0);
+
     border-right: 1px solid #000;
+    border-left: 1px solid #eeeeee;
+}
+
+#navigation li:active {
+    background-image: -moz-linear-gradient(top, #bbbbbb, #eeeeee);
+    background-image: -webkit-gradient(linear, 0 0, 0 100%, from(#bbbbbb), to(#eeeeee));
+    background-image: -webkit-linear-gradient(top, #bbbbbb, #eeeeee);
+    background-image: -o-linear-gradient(top, #bbbbbb, #eeeeee);
+    background-image: linear-gradient(to bottom, #bbbbbb, #eeeeee);
+    background-repeat: repeat-x;
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#ffbbbbbb', endColorstr='#ffeeeeee', GradientType=0);
 }
 
 #navigation li a {
@@ -157,7 +233,10 @@ body {
 }
 
 #header h1 {
-    width: 100%;
+    position: absolute;
+    left: 50%;
+    margin-left: -100px;
+    width: 200px;
     height: 40px;
 
     background-image: url('/images/logo.png');

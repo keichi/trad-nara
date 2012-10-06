@@ -8,6 +8,14 @@
 			<h2 class="post-title"><a href="/post/<%- posts[i].id %>"><%= posts[i].title %></a></h2>
 			<div class="post-author"><span class="post-author-by">by </span><a href="#"><%= posts[i].author %></a></div>
 		</div>
-		<div class="meta"><%= posts[i].viewCount %> Views, 0 Likes</div>
+		<div class="meta">
+			<div class="meta-stats">
+				<span class="meta-view"><i class="icon-eye-open"></i><%= posts[i].viewCount %></span>
+				<span class="meta-like"><i class="icon-thumbs-up"></i>0</span>
+			</div>
+			<div class="meta-favorite">
+				<i class="icon-star-empty"></i>
+			</div>
+		</div>
 	</div>
 <% } %>
