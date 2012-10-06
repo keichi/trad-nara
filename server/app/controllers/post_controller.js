@@ -60,11 +60,16 @@ action('create', function () {
 });
 
 action('delete', function () {
-    Post.find(req.body.id, function(err, post) {
-        if (post != null) {
-            post.destroy();
+    Post.all(
+        {where: {postId: req.body.id}},
+        function(err, results) {
+            if (results!= null) {
+                for (var i = 0; i < results.length; i++) {
+                    results[i].destroy();
+                }
+            }
         }
-    });
+    );
     
     send("successful");
 });
