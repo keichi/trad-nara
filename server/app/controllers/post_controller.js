@@ -60,9 +60,13 @@ action('create', function () {
 });
 
 action('delete', function () {
-    render({
-        title   :   'post#delete'
+    Post.find(req.body.id, function(err, post) {
+        if (post != null) {
+            post.destroy();
+        }
     });
+    
+    send("successful");
 });
 
 action('show', function () {
