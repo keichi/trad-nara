@@ -64,9 +64,14 @@ action('delete', function () {
         {where: {postId: req.body.id}},
         function(err, results) {
             if (results!= null) {
-                for (var i = 0; i < results.length; i++) {
-                    results[i].destroy();
-                }
+                _(results).each(function(result) {
+                    result.images(function(err, images) {
+                        _(images).each(function(img) {
+                            img.destroy();
+                        });
+                    });
+                    result.destroy();
+                });
             }
         }
     );
