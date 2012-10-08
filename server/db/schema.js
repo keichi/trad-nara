@@ -32,7 +32,7 @@ var Post = describe('Post', function () {
     property('created', Date);
     property('modified', Date);
     property('topimage', String);
-    property('viewCount', {type: Number, default: 0});
+    property('viewCount', Number, {default: 0});
 });
 
 var Image = describe('Image', function () {
