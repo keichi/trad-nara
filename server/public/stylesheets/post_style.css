@@ -13,10 +13,9 @@ Author URI: http://keichi.net/
 }
 
 body {
-    background-color: #000;
+    background-color: rgb(50, 53, 58);
     font-family: "HelveticaNeueLight", "HelveticaNeue-Light", "Helvetica Neue Light", "HelveticaNeue", "Helvetica Neue", 'TeXGyreHerosRegular', "Helvetica", "Tahoma", "Geneva", "Arial", sans-serif; font-weight:300; font-stretch:normal;
     font-weight: 300;
-    background-image: url('/images/bg.png');
 }
 
 a {
