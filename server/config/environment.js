@@ -1,5 +1,6 @@
 var express = require('express');
 var everyauth = require('everyauth');
+var mongoStore = require('session-mongoose');
 
 everyauth.everymodule
 // .handleLogout( function(req, res){
@@ -61,7 +62,12 @@ app.configure(function(){
     app.set('cssDirectory', '/stylesheets/');
     app.use(express.bodyParser());
     app.use(express.cookieParser('secret'));
-    app.use(express.session({secret: 'secret'}));
+
+    var mongooseSessionStore = new mongoStore({
+      url: "mongodb://localhost/trad_session",
+      interval: 120000 
+    });
+    app.use(express.session({cookie: {maxAge: 120000}, store: mongooseSessionStore, secret: "secret" }));
     app.use(express.methodOverride());
     app.use(everyauth.middleware()) //追加
     app.use(app.router);
