@@ -36,6 +36,7 @@ var Post = describe('Post', function () {
 });
 
 var Image = describe('Image', function () {
+    property('order', Number);
     property('url', String);
 });
 

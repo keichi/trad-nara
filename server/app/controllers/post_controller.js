@@ -48,9 +48,10 @@ action('create', function () {
                     });
                 }
 
-                _(data.images).each(function(img) {
+                _(data.images).each(function(img, i) {
                     var image = post.images.build();
                     image.url = img.src;
+                    image.order = i;
                     image.save();
                 });
             }
@@ -86,7 +87,7 @@ action('show', function () {
             redirect('/');
         } else {
             post.images(function(err, images) {
-                post.imageurls = images;
+                post.imageurls = _(images).sortBy(function(img) {return img.order;});
                 render({
                     title  :   'post#show',
                     post   :    post,
