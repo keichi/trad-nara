@@ -2,6 +2,7 @@ exports.routes = function (map) {
     // Generic routes. Add all your routes below this line
     // feel free to remove generic routes
     map.root('top#home');
+    map.get('/timeline', 'top#timeline');
     map.get('/login', 'top#login');
     map.get('/post/:id', 'post#show');
 

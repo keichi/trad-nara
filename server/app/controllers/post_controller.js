@@ -86,6 +86,8 @@ action('show', function () {
         if (post == null) {
             redirect('/');
         } else {
+            post.updateAttribute('viewCount', parseInt(post.viewCount) + 1, function() {});
+
             post.images(function(err, images) {
                 post.imageurls = _(images).sortBy(function(img) {return img.order;});
                 render({
