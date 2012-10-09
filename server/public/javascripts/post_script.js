@@ -61,7 +61,7 @@ $(document).ready(function() {
 				position: google.maps.ControlPosition.TOP_RIGHT
 			},
 			mapTypeControlOptions: {
-				position: google.maps.ControlPosition.TOP_CENTER
+				position: google.maps.ControlPosition.BOTTOM_LEFT
 			},
 			styles: [{
 				stylers: [
