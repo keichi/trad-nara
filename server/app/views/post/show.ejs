@@ -31,18 +31,17 @@
                     <a href="mailto:?subject=Share%20it&amp;body=<%= uriencode(url) %>">
                        <img src="/images/icon/email_32.png" alt="email_32" width="32" height="32" /></a>
                 </div>
-        	   <div class="post">
-                    <div class="flexslider">
-                	   <ul class="slides">
-                        <% for(var i = 0; i < post.imageurls.length; i++) { %>
-                            <li>
-                                <img src="<%- post.imageurls[i].url %>"/>
-                                <p class="flex-caption"><%= post.imageurls[i].caption ? post.imageurls[i].caption : "" %></p>
-                            </li>
-                        <% } %>
-                       </ul>
-                    </div>
-                                
+                <div class="flexslider">
+                   <ul class="slides">
+                    <% for(var i = 0; i < post.imageurls.length; i++) { %>
+                        <li>
+                            <img src="<%- post.imageurls[i].url %>"/>
+                            <p class="flex-caption"><%= post.imageurls[i].caption ? post.imageurls[i].caption : "" %></p>
+                        </li>
+                    <% } %>
+                   </ul>
+                </div>
+        	    <div class="post">                
                     <%- post.body %>
 
                     <% if(post.address) { %>

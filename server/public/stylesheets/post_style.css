@@ -84,7 +84,7 @@ a:hover {
     line-height: 20px;
 }
 
-#contents .post .flexslider {
+#contents .flexslider {
     margin: 0px auto 30px auto;
 }
 
@@ -190,8 +190,8 @@ a:hover {
 
 #contents .post > ul, #contents .post > ol {
     list-style-type: disc;
-    margin-left: 10px;
-    margin-bottom: 25px;
+    margin-left: 25px;
+    margin-bottom: 10px;
 }
 
 #contents .post > li {
@@ -199,8 +199,7 @@ a:hover {
 }
 
 #contents .post iframe, #contents .post img {
-    margin-left: auto;
-    margin-right: auto;
+    margin: 20px auto;
     display: block;
 }
   
