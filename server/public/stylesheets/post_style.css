@@ -80,7 +80,8 @@ a:hover {
 }
 
 #contents .post {
-    line-height: 1.2em;
+    font-size: 14px;
+    line-height: 20px;
 }
 
 #contents .post .flexslider {
@@ -88,10 +89,9 @@ a:hover {
 }
 
 #contents .post p {
-    margin: 1em 0px;
-    text-indent: 1em;
+    text-indent: 14px;
     letter-spacing: 0.05em;
-    line-height: 1.5em;
+    margin: 10px 0;
 }
 
 #contents .post p.lead {
@@ -107,10 +107,39 @@ a:hover {
     color: #e44a24;
 }
 
-#contents .post h2 {
-    font-size: 1.5em;
+#contents .post h1, #contents .post h2, #contents .post h3, #contents .post h4, #contents .post h5, #contents .post h6 {
     font-weight: bold;
-    color: #fff;
+    margin: 10px 0;
+}
+
+#contents .post h1 {
+    font-size: 36px;
+    line-height: 40px;
+}
+
+#contents .post h2 {
+    font-size: 30;
+    line-height: 40px;
+}
+
+#contents .post h3 {
+    font-size: 24;
+    line-height: 40px;
+}
+
+#contents .post h4 {
+    font-size: 18px;
+    line-height: 20px;
+}
+
+#contents .post h5 {
+    font-size: 14px;
+    line-height: 20px;
+}
+
+#contents .post h6 {
+    font-size: 12px;
+    line-height: 20px;
 }
 
 #contents #mapinfo {

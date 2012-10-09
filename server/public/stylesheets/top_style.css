@@ -85,6 +85,7 @@ body {
 .post-box .title-author h2.post-title a {
     font-size: 1.2em;
     color: #eee;
+    text-shadow: 0px -1px 0px #000;
 }
 
 .post-box .title-author .post-author {
