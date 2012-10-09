@@ -144,6 +144,14 @@ body {
     margin-right: 5px;
 }
 
+.post-box .meta .meta-comments i {
+    margin-right: 5px;
+}
+
+.post-box .meta .meta-comments {
+    margin-right: 5px;
+}
+
 #footer {
     border-top: 1px solid #777;
     padding-top: 5px;
