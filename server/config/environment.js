@@ -21,8 +21,6 @@ everyauth.twitter
       var promise = this.Promise();
       promise.fulfill();
 
-      console.log(twitterUserData);
-
       var user = {};
       user.name = twitterUserData.name;
       user.accessToken = accessToken;
@@ -43,8 +41,6 @@ everyauth.facebook
         var promise = this.Promise();
         promise.fulfill();
 
-        console.log(fbUserMetadata);
-        
         var user = {};
         user.name = fbUserMetadata.id;
         user.accessToken = accessToken;
