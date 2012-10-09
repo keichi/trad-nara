@@ -110,6 +110,7 @@ a:hover {
 #contents .post h1, #contents .post h2, #contents .post h3, #contents .post h4, #contents .post h5, #contents .post h6 {
     font-weight: bold;
     margin: 10px 0;
+    color: #f0f0f0;
 }
 
 #contents .post h1 {
@@ -188,10 +189,14 @@ a:hover {
     text-decoration: none;
 }
 
-#contents .post > ul {
-    list-style-type: square;
-    margin-left: 2.5em;
-    margin-bottom: 1em;
+#contents .post > ul, #contents .post > ol {
+    list-style-type: disc;
+    margin-left: 10px;
+    margin-bottom: 25px;
+}
+
+#contents .post > li {
+    line-height: 20px;
 }
 
 #contents .post iframe, #contents .post img {
