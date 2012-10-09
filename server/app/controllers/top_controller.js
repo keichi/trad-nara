@@ -1,3 +1,5 @@
+var _ = require('underscore');
+
 load('application');
 
 before(function() {

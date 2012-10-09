@@ -74,15 +74,16 @@ function wpost_post_post($post_id){
 	foreach ($image_posts as $image) {
 		$meta = wp_get_attachment_metadata($image->ID);
 		$images[] = array(
-			'alt' => $image->post_excerpt,
 			'src' => $image->guid,
 			'width' => intval($meta['width']),
 			'height' => intval($meta['height']),
+			'title' => $image->post_title,
+			'caption' => $image->post_excerpt,
+			'description' => $image->content,
 		);
 		if(is_null($topimage)){
 			$image_src = wp_get_attachment_image_src($image->ID,"node_thumb");
 			$topimage = array(
-                        	'alt' => $image->post_excerpt,
 							'src' => $image_src[0],
                         	'width' => intval($image_src[1]),
                         	'height' => intval($image_src[2]),

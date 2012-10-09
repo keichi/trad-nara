@@ -52,6 +52,7 @@ action('create', function () {
                     var image = post.images.build();
                     image.url = img.src;
                     image.order = i;
+                    image.caption = img.caption;
                     image.save();
                 });
             }

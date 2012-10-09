@@ -37,7 +37,7 @@
                         <% for(var i = 0; i < post.imageurls.length; i++) { %>
                             <li>
                                 <img src="<%- post.imageurls[i].url %>"/>
-                                <p class="flex-caption">Picture caption should be placed here</p>
+                                <p class="flex-caption"><%= post.imageurls[i].caption %></p>
                             </li>
                         <% } %>
                        </ul>

@@ -38,6 +38,7 @@ var Post = describe('Post', function () {
 var Image = describe('Image', function () {
     property('order', Number);
     property('url', String);
+    property('caption', String);
 });
 
 Post.hasMany(Image, {as: 'images', foreignKey: 'postId'});
