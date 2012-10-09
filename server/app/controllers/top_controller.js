@@ -13,7 +13,7 @@ action('home', function () {
             console.log("Error querying posts: " + err);
         }
         render({
-            title: "top#home",
+            title: "TRAD NARA &raquo; Home",
             posts: posts
         });
     });
@@ -25,7 +25,7 @@ action('timeline', function () {
             console.log("Error querying posts: " + err);
         }
         render({
-            title: "top#timeline",
+            title: "TRAD NARA &raquo; Timeline",
             posts: posts
         });
     });
@@ -33,6 +33,6 @@ action('timeline', function () {
 
 action('login', function() {
 	render({
-		title: "Login",
+		title: "TRAD NARA &raquo; Login",
 	});
 });
