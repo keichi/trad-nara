@@ -21,6 +21,8 @@ everyauth.twitter
       var promise = this.Promise();
       promise.fulfill();
 
+      console.log(twitterUserData);
+
       var user = {};
       user.name = twitterUserData.name;
       user.accessToken = accessToken;
@@ -29,17 +31,19 @@ everyauth.twitter
 
       return promise;
   }
-  )
+)
 .redirectPath('/');
 
 
 everyauth.facebook
-.appId('142112035927729')
-.appSecret('c3490c436f906214119dc69a59912375')
+.appId('385327488206734')
+.appSecret('1b9102af844b31ce167bcd3c315a6316')
 .findOrCreateUser(
     function(session,accessToken,accessTokExtra,fbUserMetadata){
         var promise = this.Promise();
         promise.fulfill();
+
+        console.log(fbUserMetadata);
         
         var user = {};
         user.name = fbUserMetadata.id;
