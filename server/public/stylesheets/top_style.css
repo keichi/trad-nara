@@ -118,14 +118,15 @@ body {
 .post-box .meta .meta-favorite {
     float: right;
     width: 50px;
-    padding-top: 10px;
-    padding-bottom: 10px;
+    padding-top: 5px;
+    padding-bottom: 5px;
     text-align: center;
     border-left: 1px solid #a0a0a0;
 }
 
 .post-box .meta .meta-favorite i {
     color: #E9A735;
+    font-size: 20px;
 }
 
 .post-box .meta .meta-view i {

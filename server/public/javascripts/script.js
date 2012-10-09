@@ -17,6 +17,11 @@ $(document).ready(function() {
         slide_speed         :   300,
 */
     });
+
+    $('.meta-favorite').click(function() {
+        $(this).children().toggleClass('icon-star-empty');
+        $(this).children().toggleClass('icon-star');
+    });
     
     /*
     $('#navigation ul li a').hover(function() {
