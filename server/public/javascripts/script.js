@@ -73,7 +73,7 @@ $(document).ready(function() {
 				.animate({
 						'left': Math.round((i % cols) * (w + _m)) + _m,
 						'top': Math.floor(i / cols) * (h + _m)
-					}, s + i * 30, 'easeInOutExpo');
+					}, s + i * 30, 'easeOutBounce');
 		});
 		
 		initWidth = undefined;
