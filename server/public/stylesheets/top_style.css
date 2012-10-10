@@ -109,14 +109,14 @@ body {
 }
 
 .post-box .meta .meta-stats {
-    float: left;
+    display: inline-block;
     width: 200px;
     padding-top: 10px;
     padding-bottom: 10px;
 }
 
 .post-box .meta .meta-favorite {
-    float: right;
+    display: inline-block;
     width: 50px;
     padding-top: 5px;
     padding-bottom: 5px;

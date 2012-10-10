@@ -32,6 +32,11 @@ $(document).ready(function() {
             'left'  :   initWidth / 2 - w / 2,
             'top'   :   initHeight / 2 ,
         });
+        $box.hover(function() {
+            $(this).animate({boxShadow: '0 0 20px #000'}, 300);
+        }, function() {
+            $(this).animate({boxShadow: '0 1px 4px #000'}, 300);
+        });
 
         var opts = {
           lines: 13, // The number of lines to draw
