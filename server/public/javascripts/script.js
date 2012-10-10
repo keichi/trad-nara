@@ -25,6 +25,12 @@ $(document).ready(function() {
         
         return false;
 	});
+
+    $('.meta-favorite').powerTip();
+    $('.meta-view').powerTip();
+    $('.meta-like').powerTip();
+    $('.meta-comments').powerTip();
+
     
     function init() {
         $container.addClass('jsReady');
