@@ -1,6 +1,6 @@
 #!/bin/sh
 
 npm install -l
-npm install async underscore mysql everyauth
+npm install async underscore mongoose everyauth session-mongoose
 railway db update
 
