@@ -1,3 +1,4 @@
 #!/bin/sh
 
 git push ssh://www-data@trads-jp.com/var/www/trads/trads.git master:master
+ssh www-data@trads-jp.com forever restartall
