@@ -7,36 +7,17 @@ $(document).ready(function() {
     var s = 500;
     var initWidth = $container.width();
     var initHeight = $container.height();
+    var spinner;
     
 	$('.post-box img').contenthover({
         overlay_background  :   '#000',
         overlay_opacity     :   0.8,
-/*
-        effect              :   'slide',
-        slide_direction     :   'top',
-        slide_speed         :   300,
-*/
     });
 
     $('.meta-favorite').click(function() {
         $(this).children().toggleClass('icon-star-empty');
         $(this).children().toggleClass('icon-star');
     });
-    
-    /*
-    $('#navigation ul li a').hover(function() {
-		$(this).stop().animate({ backgroundColor: "#555" }, 400);
-		$('#navigation').stop().animate({
-		  'border-top-color'  :   "#fff",
-		  'border-bottom-color' : "#fff"
-		  }, 400);
-	},function() {
-		$(this).stop().animate({ backgroundColor: "#000" }, 800);
-		$('#navigation').stop().animate({
-		  'border-top-color'  :   "#aaa",
-		  'border-bottom-color' : "#aaa"
-		  }, 400);
-	});*/
 	
 	$('.top-scroll').click(function() {
         $(this).blur();
@@ -47,19 +28,35 @@ $(document).ready(function() {
     
     function init() {
         $container.addClass('jsReady');
-        if($box.size()>0){
-            $box.css({
-                'left'  :   0,
-                'top'   :   0,
-            });
-        }else{
-            $('#navigation').show(200);
-            $('#footer').show(200);
-            $('#header').show(200);
-        }
+        $box.css({
+            'left'  :   initWidth / 2 - w / 2,
+            'top'   :   initHeight / 2 ,
+        });
+
+        var opts = {
+          lines: 13, // The number of lines to draw
+          length: 7, // The length of each line
+          width: 4, // The line thickness
+          radius: 10, // The radius of the inner circle
+          corners: 1, // Corner roundness (0..1)
+          rotate: 0, // The rotation offset
+          color: '#fff', // #rgb or #rrggbb
+          speed: 1, // Rounds per second
+          trail: 60, // Afterglow percentage
+          shadow: false, // Whether to render a shadow
+          hwaccel: false, // Whether to use hardware acceleration
+          className: 'spinner', // The CSS class to assign to the spinner
+          zIndex: 2e9, // The z-index (defaults to 2000000000)
+          top: 'auto', // Top position relative to parent in px
+          left: 'auto', // Left position relative to parent in px
+        };
+        spinner = new Spinner(opts).spin($('#loading')[0]);
     }
     
 	function layout(e) {
+        // $box.css('display', 'inline-block');
+        spinner.stop();
+
     	var cw = initWidth || $container.width();
 		var cols = Math.floor((cw + m) / (w + m));
 		var rows = Math.ceil( $box.size() / cols );
@@ -72,16 +69,11 @@ $(document).ready(function() {
 		$box.each(function(i){
             $(this)
 				.stop(true)
+                .fadeIn()
 				.animate({
 						'left': Math.round((i % cols) * (w + _m)) + _m,
 						'top': Math.floor(i / cols) * (h + _m)
-					}, s + i * 30, 'easeInOutExpo', function() {
-    					if (e.type == "load") {
-        					$('#navigation').show(200);
-        					$('#footer').show(200);
-        					$('#header').show(200);
-    					}
-					});
+					}, s + i * 30, 'easeInOutExpo');
 		});
 		
 		initWidth = undefined;
