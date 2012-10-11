@@ -22,7 +22,6 @@
 */
 
 var Post = describe('Post', function () {
-    property('postId', Number);
     property('author', String);
     property('title', String);
     property('lead', Text);
@@ -42,11 +41,12 @@ var Image = describe('Image', function () {
 });
 
 Post.hasMany(Image, {as: 'images', foreignKey: 'postId'});
+Image.belongsTo(Post, {as: 'post', foreignKey: 'postId'});;
 
 var User = describe('User', function() {
     property('name', String);
     property('location', String);
     property('username', String);
-    property('registered', Date);
+    property('registered', Date, {default: Date.Now});
     property('service', String);
 });
