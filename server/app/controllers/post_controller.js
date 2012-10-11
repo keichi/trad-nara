@@ -65,11 +65,9 @@ action('delete', function () {
     Post.all(
         {where: {wpPostId: req.body.id}},
         function(err, results) {
-            if (results) {
-                _(results).each(function(result) {
-                    result.destroy();
-                });
-            }
+            _(results).each(function(result) {
+                result.destroy();
+            });
         }
     );
     
