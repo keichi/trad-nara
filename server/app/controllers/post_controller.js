@@ -9,7 +9,7 @@ action('create', function () {
     async.waterfall([
         function(cb) {
             Post.all(
-                {where: {postId: data.id}},
+                {where: {wpPostId: data.id}},
                 function(err, results) {cb(null, results);}
                 );
         },
@@ -23,7 +23,7 @@ action('create', function () {
                 isNew = true;
             }
 
-            post.postId = data.id;
+            post.wpPostId = data.id;
             post.author = data.author;
             post.title = data.title;
             post.lead = data.lead;
@@ -63,15 +63,10 @@ action('create', function () {
 
 action('delete', function () {
     Post.all(
-        {where: {postId: req.body.id}},
+        {where: {wpPostId: req.body.id}},
         function(err, results) {
-            if (results!= null) {
+            if (results) {
                 _(results).each(function(result) {
-                    result.images(function(err, images) {
-                        _(images).each(function(img) {
-                            img.destroy();
-                        });
-                    });
                     result.destroy();
                 });
             }

@@ -32,6 +32,7 @@ var Post = describe('Post', function () {
     property('modified', Date);
     property('topimage', String);
     property('viewCount', Number, {default: 0});
+    property('wpPostId', Number);
 });
 
 var Image = describe('Image', function () {
