@@ -51,3 +51,18 @@ var User = describe('User', function() {
     property('registered', Date, {default: Date.Now});
     property('service', String);
 });
+
+var FavoriteList = describe('FavoriteList', function() {
+    property('name', String);
+});
+
+User.hasMany(FavoriteList, {as: 'favoriteLists', foreignKey: 'userId'});
+FavoriteList.belongsTo(User, {as: 'user', foreignKey: 'userId'});
+
+var FavoriteRelation = describe('FavoriteRelation', function() {
+});
+
+FavoriteRelation.hasMany(FavoriteList, {as: 'lists', foreignKey: 'favoriteRelationId'});
+FavoriteList.belongsTo(FavoriteRelation, {as: 'favoriteRelation', foreignKey: 'favoriteRelationId'});
+FavoriteRelation.hasMany(Post, {as: 'posts', foreignKey: 'favoriteRelationId'});
+Post.belongsTo(FavoriteRelation, {as: 'favoriteRelation', foreignKey: 'favoriteRelationId'});
