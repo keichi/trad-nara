@@ -30,7 +30,7 @@ $(document).ready(function() {
     $('.meta-view').powerTip();
     $('.meta-like').powerTip();
     $('.meta-comments').powerTip();
-
+    $('#navigation li a').powerTip();
     
     function init() {
         $container.addClass('jsReady');
