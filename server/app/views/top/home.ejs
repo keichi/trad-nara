@@ -3,6 +3,7 @@
 	<div class="post-box">
 		<img src="<%- posts[i].topimage %>" alt="thumbnail" width="300" height="200"/>
 		<div class="contenthover"><%- posts[i].lead %></div>
+		<div class="ribbon-wrapper"><div class="ribbon ribbon-<%= ribbon_color(posts[i].category) %>"><%= posts[i].category %></div></div>
                 
 		<div class="title-author">
 			<h2 class="post-title"><a href="/post/<%- posts[i].id %>"><%= posts[i].title %></a></h2>

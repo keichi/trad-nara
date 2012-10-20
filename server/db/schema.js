@@ -33,8 +33,9 @@ var Post = describe('Post', function () {
     property('topimage', String);
     property('viewCount', Number, {default: 0});
     property('wpPostId', Number);
+    property('category', String, {default: "Uncategorized"});
 });
-
+ 
 var Image = describe('Image', function () {
     property('order', Number);
     property('url', String);

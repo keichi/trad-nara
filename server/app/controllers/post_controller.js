@@ -8,10 +8,7 @@ action('create', function () {
 
     async.waterfall([
         function(cb) {
-            Post.all(
-                {where: {wpPostId: data.id}},
-                function(err, results) {cb(null, results);}
-                );
+            Post.all({where: {wpPostId: data.id}}, cb);
         },
         function(results, cb) {
             var isNew = false;
@@ -32,6 +29,8 @@ action('create', function () {
             post.label = data.label;
             post.modified = new Date(data.modified);
             post.created = new Date(data.created);
+            post.category = data.category;
+
             if (data.topimage != undefined) {
                post.topimage = data.topimage.src;
             }
