@@ -94,11 +94,9 @@ function wpost_post_post($post_id){
 	
 	$url = get_option("wpost_post_url","http://127.0.0.1/internal/post");
 	$author = get_userdata($post->post_author);
-
+	
 	$categories = get_the_category($post_id);
 	$category = "";
-	die('test');
-
 	if ($categories) {
 		$category = $categories[0]->name;
 	}
