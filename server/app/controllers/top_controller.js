@@ -24,7 +24,7 @@ action('timeline', function () {
         if (err != null) {
             console.log("Error querying posts: " + err);
         }
-        render({
+        render('home', {
             title: "TRAD NARA &raquo; Timeline",
             posts: posts
         });
