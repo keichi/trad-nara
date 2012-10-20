@@ -184,10 +184,6 @@ body {
 
 #navigation li {
     display: inline-block;
-
-    border-right: 1px solid #000;
-    border-left: 1px solid #eeeeee;
-
     background-color: #dadada;
     background-image: -moz-linear-gradient(top, #eeeeee, #bbbbbb);
     background-image: -webkit-gradient(linear, 0 0, 0 100%, from(#eeeeee), to(#bbbbbb));
@@ -276,4 +272,64 @@ body {
     margin: 0 auto;
     width: 200px;
     height: 200px;
+}
+
+.ribbon {
+  -webkit-transform: rotate(45deg);
+  -moz-transform:    rotate(45deg);
+  -ms-transform:     rotate(45deg);
+  -o-transform:      rotate(45deg);
+  position: relative;
+  left: 3px;
+  top: 35px;
+  width: 200px;
+  padding-top: 6px;
+  padding-bottom: 6px;
+
+  font-size: 15px;
+  font-weight: bold;
+  text-align: center;
+
+  color: #fff;
+  -webkit-box-shadow: 0px 0px 3px rgba(0,0,0,0.4);
+  -moz-box-shadow:    0px 0px 3px rgba(0,0,0,0.4);
+  box-shadow:         0px 0px 3px rgba(0,0,0,0.4);
+  text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.25);
+}
+
+.ribbon-blue {
+  background-color: #5BC0DE;
+  background-image: -webkit-gradient(linear, left top, left bottom, from(#5BC0DE), to(#2f96b4)); 
+  background-image: -webkit-linear-gradient(top, #5BC0DE, #2f96b4);
+  background-image:    -moz-linear-gradient(top, #5BC0DE, #2f96b4); 
+  background-image:     -ms-linear-gradient(top, #5BC0DE, #2f96b4); 
+  background-image:      -o-linear-gradient(top, #5BC0DE, #2f96b4);
+}
+
+.ribbon-green {
+  background-color: #62c462;
+  background-image: -webkit-gradient(linear, left top, left bottom, from(#62c462), to(#51a351)); 
+  background-image: -webkit-linear-gradient(top, #62c462, #51a351);
+  background-image:    -moz-linear-gradient(top, #62c462, #51a351); 
+  background-image:     -ms-linear-gradient(top, #62c462, #51a351); 
+  background-image:      -o-linear-gradient(top, #62c462, #51a351);
+}
+
+.ribbon-yellow {
+  background-color: #fbb450;
+  background-image: -webkit-gradient(linear, left top, left bottom, from(#fbb450), to(#f89406)); 
+  background-image: -webkit-linear-gradient(top, #fbb450, #f89406);
+  background-image:    -moz-linear-gradient(top, #fbb450, #f89406); 
+  background-image:     -ms-linear-gradient(top, #fbb450, #f89406); 
+  background-image:      -o-linear-gradient(top, #fbb450, #f89406);
+}
+
+.ribbon-wrapper {
+    overflow: hidden;
+    width: 150px;
+    height: 150px;
+    position: absolute;
+    top: 0px;
+    right: 0px;
+    z-index: 100;
 }

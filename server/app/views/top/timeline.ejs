@@ -10,13 +10,13 @@
 		</div>
 		<div class="meta">
 			<div class="meta-stats">
-				<span class="meta-view"><i class="icon-eye-open"></i><%= posts[i].viewCount %></span>
-				<span class="meta-like"><i class="icon-thumbs-up"></i>0</span>
-				<span class="meta-comments"><i class="icon-comment-alt"></i>0</span>
+				<a class="meta-view" href="#" title="<%= posts[i].viewCount %> views"><i class="icon-eye-open"></i><%= posts[i].viewCount %></a>
+				<a class="meta-like" href="#" title="0 likes"><i class="icon-thumbs-up"></i>0</a>
+				<a class="meta-comments" href="#" title="0 comments"><i class="icon-comment-alt"></i>0</a>
 			</div>
-			<div class="meta-favorite">
+			<a class="meta-favorite" href="#" title="Favorite this post!">
 				<i class="icon-star-empty"></i>
-			</div>
+			</a>
 		</div>
 	</div>
 <% } %>
