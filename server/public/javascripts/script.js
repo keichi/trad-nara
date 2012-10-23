@@ -61,6 +61,7 @@ $(document).ready(function() {
           top: 'auto', // Top position relative to parent in px
           left: 'auto', // Left position relative to parent in px
         };
+        $('#container').prepend('<div id="loading"></div>');
         spinner = new Spinner(opts).spin($('#loading')[0]);
     }
     
@@ -68,7 +69,7 @@ $(document).ready(function() {
         // $box.css('display', 'inline-block');
         spinner.stop();
 
-    	var cw = initWidth || $container.width();
+  	var cw = initWidth || $container.width();
 		var cols = Math.floor((cw + m) / (w + m));
 		var rows = Math.ceil( $box.size() / cols );
 		var _m = Math.floor((cw - cols * w) / (cols + 1));
@@ -78,9 +79,9 @@ $(document).ready(function() {
 		  });
 		
 		$box.each(function(i){
-            $(this)
+        $(this)
 				.stop(true)
-                .fadeIn()
+        .fadeIn()
 				.animate({
 						'left': Math.round((i % cols) * (w + _m)) + _m,
 						'top': Math.floor(i / cols) * (h + _m)
@@ -90,8 +91,10 @@ $(document).ready(function() {
 		initWidth = undefined;
 	}
 	
-	// イベントの登録
-	$(window).bind('load resize', layout);
-    
+  if ($('#loginlinks').length == 0) {
+  	// イベントの登録
+  	$(window).bind('load resize', layout);
+      
     init();
+  }
 });
