@@ -10,23 +10,21 @@
 <body>
     <div id="wrapper">
         <div id="header">
-			<div id="title">
-           		<a href="/"><h1>TRAD NARA</h1></a>
-			</div>
-			<% if(user) { %>
-			<div id="auth">
-				<p id="username"><%= user.name %></p>
+			<a href="/"><h1>TRAD NARA</h1></a>
+			<% if(isLoggedIn) { %>
+			<div id="user-info">
+				<%= user %>
         	</div>
 			<% } %>
 		</div>
     
         <div id="navigation">
             <ul>
-                <li><a href="/" title="Order posts by popularity"><div class="nav-item-title">HOME</div></a></li>
-                <li><a href="/timeline" title="Order posts by post date"><div class="nav-item-title">TIMELINE</div></a></li>
-                <li><a href="/favorites" title="View my favorite posts"><div class="nav-item-title">FAVORITES</div></a></li>
-                <li><a href="/contributors" title="Dedicated people who contributed to this project"><div class="nav-item-title">CONTRIBUTORS</div></a></li>
-                <li><a href="/login" title="Login to Trad Nara"><div class="nav-item-title">LOGIN</div></a></li>
+                <li><a href="/" title="Order posts by popularity">HOME</a></li>
+                <li><a href="/timeline" title="Order posts by post date">TIMELINE</a></li>
+                <li><a href="/favorites" title="View my favorite posts">FAVORITES</a></li>
+                <li><a href="/contributors" title="Dedicated people who contributed to this project">CONTRIBUTORS</a></li>
+                <li><a href="/<% if (isLoggedIn) { %>logout<% } else { %>login<% } %>" title="Login to Trad Nara"><% if (isLoggedIn) { %>LOGOUT<% } else { %>LOGIN<% } %></a></li>
             </ul>
         </div>
     

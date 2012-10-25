@@ -10,6 +10,10 @@ everyauth.everymodule
 .moduleErrback(function(err){
 	//この処理はエラー回避に必要
 	console.log(err)
+})
+.findUserById( function(userId, callback) {
+    console.log(userId);
+    callback(null, {name: 'Keichi', age: 20});
 });
 
 everyauth.twitter
@@ -19,14 +23,7 @@ everyauth.twitter
 .findOrCreateUser(
 	function(session, accessToken, accessTokenSecret, twitterUserData){
 	  var promise = this.Promise();
-	  promise.fulfill();
-
-	  var user = {};
-	  user.name = twitterUserData.name;
-	  user.accessToken = accessToken;
-	  user.accessTokenSecret = accessTokenSecret;
-	  session.user = user;
-
+	  promise.fulfill({id: 'twitter:test'});
 	  return promise;
   }
 )
@@ -64,12 +61,11 @@ app.configure(function(){
 	app.use(express.cookieParser('secret'));
 
 	var mongooseSessionStore = new mongoStore({
-	  url: "mongodb://localhost/trad_session",
-	  interval: 120000 
+		url: "mongodb://localhost/trad_session",
+		interval: 120000 
 	});
 	app.use(express.session({cookie: {maxAge: 120000}, store: mongooseSessionStore, secret: "secret" }));
 	app.use(express.methodOverride());
-	app.use(everyauth.middleware()) //追加
+	app.use(everyauth.middleware(app)) //追加
 	app.use(app.router);
 });
-

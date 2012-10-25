@@ -1,10 +1,16 @@
 var _ = require('underscore');
+// var everyauth = require('everyauth');
 
 load('application');
 
 before(function() {
-	this.user = req.session.user;
-	next();
+    // console.log(everyauth);
+    this.isLoggedIn = req.loggedIn;
+    if (this.isLoggedIn) {
+        this.user = req.user.name;
+    }
+
+    next();
 });
 
 action('home', function () {

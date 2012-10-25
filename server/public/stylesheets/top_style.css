@@ -210,20 +210,13 @@ body {
     display: block;
     padding-top: 5px;
     padding-left: 5px;
-    width: 150px;
     height: 20px;
     text-align: center;
-}
-
-#navigation .nav-item-title {
     color: #555;
     font-weight: bold;
     font-size: 0.9em;
-}
-
-#navigation .nav-item-desc {
-    display: none;
-    font-size: 0.7em;
+    margin-left: 10px;
+    margin-right: 10px;
 }
 
 #navigation a:hover {
@@ -333,4 +326,14 @@ body {
     top: 0px;
     right: 0px;
     z-index: 100;
+}
+
+#user-info {
+    position: absolute;
+    width: 100px;
+    height: 30px;
+    right: 10px;
+    top: 10px;
+    background-color: #eee;
+    color: #333;
 }
