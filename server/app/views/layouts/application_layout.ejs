@@ -20,11 +20,16 @@
     
         <div id="navigation">
             <ul>
-                <li><a href="/" title="Order posts by popularity">HOME</a></li>
-                <li><a href="/timeline" title="Order posts by post date">TIMELINE</a></li>
-                <li><a href="/favorites" title="View my favorite posts">FAVORITES</a></li>
-                <li><a href="/contributors" title="Dedicated people who contributed to this project">CONTRIBUTORS</a></li>
-                <li><a href="/<% if (isLoggedIn) { %>logout<% } else { %>login<% } %>" title="Login to Trad Nara"><% if (isLoggedIn) { %>LOGOUT<% } else { %>LOGIN<% } %></a></li>
+                <li><%- link_to('HOME', '/', {title: 'Order posts by popularity'}) %></li>
+                <li><%- link_to('TIMELINE', '/timeline', {title: 'Order posts by post date'}) %></li>
+                <li><%- link_to('FAVORITES', '/favorites', {title: 'View my favorite posts'}) %></li>
+                <li><%- link_to('CONTRIBUTORS', '/contributors', {title: 'Dedicated people who contributed to this project'}) %></li>
+                <li><%if (isLoggedIn) { %>
+                    <%- link_to('LOGOUT', '/logout', {title: 'Logout from Trad Nara'}) %>
+                <% } else { %>
+                    <%- link_to('LOGIN', '/login', {title: 'Login to Trad Nara'}) %>
+                <% } %>
+                </li>
             </ul>
         </div>
     
