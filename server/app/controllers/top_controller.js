@@ -7,7 +7,7 @@ before(function() {
     // console.log(everyauth);
     this.isLoggedIn = req.loggedIn;
     if (this.isLoggedIn) {
-        this.user = req.user.name;
+        this.user = req.user;
     }
 
     next();

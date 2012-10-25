@@ -46,9 +46,10 @@ Post.hasMany(Image, {as: 'images', foreignKey: 'postId'});
 Image.belongsTo(Post, {as: 'post', foreignKey: 'postId'});;
 
 var User = describe('User', function() {
+    property('userId', String);
     property('name', String);
     property('location', String);
-    property('username', String);
+    property('userName', String);
     property('registered', Date, {default: Date.Now});
     property('service', String);
 });

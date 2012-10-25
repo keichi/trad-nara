@@ -12,8 +12,9 @@ everyauth.everymodule
 	console.log(err)
 })
 .findUserById( function(userId, callback) {
-    console.log(userId);
-    callback(null, {name: 'Keichi', age: 20});
+	User.findOne({userId : userId}, function(err, user) {
+		callback(null, user);
+	});
 });
 
 everyauth.twitter
@@ -22,10 +23,28 @@ everyauth.twitter
 .moduleTimeout(10000)
 .findOrCreateUser(
 	function(session, accessToken, accessTokenSecret, twitterUserData){
-	  var promise = this.Promise();
-	  promise.fulfill({id: 'twitter:test'});
-	  return promise;
-  }
+	 	var promise = this.Promise();
+
+	 	User.findOne({userId : twitterUserData.id}, function(err, result) {
+	 		if (result) {
+	 			promise.fulfill({id: 'twitter:' + twitterUserData.id});
+	 		} else {
+	 			User.create({
+	 				userId : 'twitter:' + twitterUserData.id,
+	 				name : twitterUserData.name,
+	 				location : twitterUserData.location,
+	 				userName : twitterUserData.screen_name,
+	 				service : 'Twitter',
+	 				registered : Date.Now,
+	 			}, function (err, user) {
+	 				console.log('Created user: ' + user.userId);
+	 				promise.fulfill({id: 'twitter:' + twitterUserData.id});
+	 			});
+	 		}
+		});
+
+		return promise;
+	}
 )
 .redirectPath('/');
 
@@ -38,11 +57,23 @@ everyauth.facebook
 		var promise = this.Promise();
 		promise.fulfill();
 
-		var user = {};
-		user.name = fbUserMetadata.id;
-		user.accessToken = accessToken;
-		user.accessTokExtra = accessTokExtra;
-		session.user = user;
+	 	User.findOne({userId : fbUserMetadata.id}, function(err, result) {
+	 		if (result) {
+	 			promise.fulfill({id: 'facebook:' + fbUserMetadata.id});
+	 		} else {
+	 			User.create({
+	 				userId : 'facebook:' + fbUserMetadata.id,
+	 				name : fbUserMetadata.name,
+	 				location : fbUserMetadata.location.name,
+	 				userName : fbUserMetadata.username,
+	 				service : 'Facebook',
+	 				registered : Date.Now,
+	 			}, function (err, user) {
+	 				console.log('Created user: ' + user.userId);
+	 				promise.fulfill({id: 'facebook:' + fbUserMetadata.id});
+	 			});
+	 		}
+		});
 				  
 		return user;  
 	}

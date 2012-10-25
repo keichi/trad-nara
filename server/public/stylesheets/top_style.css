@@ -330,10 +330,20 @@ body {
 
 #user-info {
     position: absolute;
-    width: 100px;
-    height: 30px;
-    right: 10px;
+    right: 30px;
     top: 10px;
-    background-color: #eee;
-    color: #333;
+    background-color: #333;
+    color: #eee;
+    -webkit-box-shadow: inset 1px 1px 1px rgba(0, 0, 0, 0.5);
+    -moz-box-shadow: inset 1px 1px 1px rgba(0, 0, 0, 0.5);
+    box-shadow: inset 1px 1px 1px rgba(0, 0, 0, 0.5);
+    border-radius: 4px;
+    font-weight: bold;
+    font-size: 13px;
+    padding: 5px 10px;
+}
+
+#user-info img {
+    vertical-align: middle;
+    margin-right: 10px;
 }

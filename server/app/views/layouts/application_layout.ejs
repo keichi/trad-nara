@@ -13,7 +13,8 @@
 			<a href="/"><h1>TRAD NARA</h1></a>
 			<% if(isLoggedIn) { %>
 			<div id="user-info">
-				<%= user %>
+                <img width="25" height="25" src="http://api.twitter.com/1/users/profile_image?screen_name=<%= user.userName %>" />
+				<%= user.name %>
         	</div>
 			<% } %>
 		</div>
