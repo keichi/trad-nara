@@ -12,14 +12,14 @@ module.exports = {
     	}
     },
 
-    profile_img_url(user) {
+    profile_img_url : function(user) {
         switch(user.service) {
             case "Twitter":
                 return "http://api.twitter.com/1/users/profile_image?screen_name=" +  user.userName;
             case "Facebook":
-                return "https://graph.facebook.com/" + user.userName + "ryuichisakamoto""/picture";
+                return "https://graph.facebook.com/" + user.userName + "/picture";
             default:
                 return "http://dummyimage.com/25x25/ff6f00/fff&text=+";
         }
-    }
+    },
 };
