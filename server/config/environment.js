@@ -55,7 +55,6 @@ everyauth.facebook
 .findOrCreateUser(
 	function(session,accessToken,accessTokExtra,fbUserMetadata){
 		var promise = this.Promise();
-		promise.fulfill();
 
 	 	User.findOne({userId : fbUserMetadata.id}, function(err, result) {
 	 		if (result) {
@@ -75,7 +74,7 @@ everyauth.facebook
 	 		}
 		});
 				  
-		return user;  
+		return promise;  
 	}
 )
 .redirectPath('/');
