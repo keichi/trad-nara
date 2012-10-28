@@ -2,6 +2,7 @@ var express = require('express');
 var mongoStore = require('session-mongoose');
 var passport = require('passport');
 var TwitterStrategy = require('passport-twitter').Strategy;
+var FacebookStrategy = require('passport-facebook').Strategy;
 
 passport.use(new TwitterStrategy({
 		consumerKey: '3g89M0nq4m8S6rWCtYh2w',
@@ -9,6 +10,33 @@ passport.use(new TwitterStrategy({
 		callbackURL: 'http://localhost:3000/auth/twitter/callback'
 	},
 	function(token, tokenSecret, profile, done) {
+		console.log(profile);
+	 	User.findOne({userId : profile.id}, function(err, result) {
+	 		if (result) {
+	 			done(null, result);
+	 		} else {
+	 			User.create({
+	 				userId : profile.id,
+	 				name : profile.displayName,
+	 				location : '',
+	 				userName : profile.displayName,
+	 				service : profile.provider,
+	 				registered : Date.Now,
+	 			}, function (err, user) {
+	 				console.log('Created user: ' + user.userId);
+	 				done(null, user);
+	 			});
+	 		}
+		});
+	}
+));
+
+passport.use(new FacebookStrategy({
+		clientID: '385327488206734',
+		clientSecret: '1b9102af844b31ce167bcd3c315a6316',
+		callbackURL: 'http://localhost:3000/auth/facebook/callback'
+	},
+	function(accessToken, refreshToken, profile, done) {
 		console.log(profile);
 	 	User.findOne({userId : profile.id}, function(err, result) {
 	 		if (result) {
@@ -63,6 +91,13 @@ app.configure(function(){
     app.get('/auth/twitter/callback',
 		passport.authenticate(
 			'twitter',
+			{ successRedirect: '/', failureRedirect: '/login' }
+		)
+	);
+    app.get('/auth/facebook', passport.authenticate('facebook'));
+    app.get('/auth/facebook/callback',
+		passport.authenticate(
+			'facebook',
 			{ successRedirect: '/', failureRedirect: '/login' }
 		)
 	);
