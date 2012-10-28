@@ -22,7 +22,6 @@ function findOrCreateUser(profile, done) {
  			User.create({
  				userId : profile.id,
  				name : profile.displayName,
- 				location : '',
  				userName : profile.username,
  				service : profile.provider,
  				registered : Date.Now,
