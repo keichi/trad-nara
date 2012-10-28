@@ -11,30 +11,38 @@ app.configure('development', function () {
     app.SITE_URL = 'http://localhost:3000/';
 });
 
+function findOrCreateUser(profile, done) {
+ 	User.findOne({userId : profile.id}, function(err, result) {
+ 		if (err) {
+ 			return done(err);
+ 		}
+ 		if (result) {
+ 			done(null, result);
+ 		} else {
+ 			User.create({
+ 				userId : profile.id,
+ 				name : profile.displayName,
+ 				location : '',
+ 				userName : profile.username,
+ 				service : profile.provider,
+ 				registered : Date.Now,
+ 			}, function (err, user) {
+ 				if (err) {
+ 					return done(err);
+ 				}
+ 				done(null, user);
+ 			});
+ 		}
+	});
+}
+
 passport.use(new TwitterStrategy({
 		consumerKey: '3g89M0nq4m8S6rWCtYh2w',
 		consumerSecret: 'D3HpxWjLVykBDVC9yk9bK0SsvazEXgo0q7HYk8Sq4',
 		callbackURL: app.SITE_URL + 'auth/twitter/callback'
 	},
 	function(token, tokenSecret, profile, done) {
-		console.log(profile);
-	 	User.findOne({userId : profile.id}, function(err, result) {
-	 		if (result) {
-	 			done(null, result);
-	 		} else {
-	 			User.create({
-	 				userId : profile.id,
-	 				name : profile.displayName,
-	 				location : '',
-	 				userName : profile.displayName,
-	 				service : profile.provider,
-	 				registered : Date.Now,
-	 			}, function (err, user) {
-	 				console.log('Created user: ' + user.userId);
-	 				done(null, user);
-	 			});
-	 		}
-		});
+		findOrCreateUser(profile, done);
 	}
 ));
 
@@ -44,24 +52,7 @@ passport.use(new FacebookStrategy({
 		callbackURL: app.SITE_URL + 'auth/facebook/callback'
 	},
 	function(accessToken, refreshToken, profile, done) {
-		console.log(profile);
-	 	User.findOne({userId : profile.id}, function(err, result) {
-	 		if (result) {
-	 			done(null, result);
-	 		} else {
-	 			User.create({
-	 				userId : profile.id,
-	 				name : profile.displayName,
-	 				location : '',
-	 				userName : profile.displayName,
-	 				service : profile.provider,
-	 				registered : Date.Now,
-	 			}, function (err, user) {
-	 				console.log('Created user: ' + user.userId);
-	 				done(null, user);
-	 			});
-	 		}
-		});
+		findOrCreateUser(profile, done);
 	}
 ));
 
