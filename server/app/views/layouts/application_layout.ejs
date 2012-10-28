@@ -11,7 +11,7 @@
     <div id="wrapper">
         <div id="header">
 			<a href="/"><h1>TRAD NARA</h1></a>
-			<% if(isLoggedIn) { %>
+			<% if(user) { %>
 			<div id="user-info">
                 <img width="25" height="25" src="<%- profile_img_url(user) %>" />
 				<%= user.name %>
@@ -25,7 +25,7 @@
                 <li><%- link_to('TIMELINE', '/timeline', {title: 'Order posts by post date'}) %></li>
                 <li><%- link_to('FAVORITES', '/favorites', {title: 'View my favorite posts'}) %></li>
                 <li><%- link_to('CONTRIBUTORS', '/contributors', {title: 'Dedicated people who contributed to this project'}) %></li>
-                <li><%if (isLoggedIn) { %>
+                <li><%if (user) { %>
                     <%- link_to('LOGOUT', '/logout', {title: 'Logout from Trad Nara'}) %>
                 <% } else { %>
                     <%- link_to('LOGIN', '/login', {title: 'Login to Trad Nara'}) %>

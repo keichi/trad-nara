@@ -4,11 +4,7 @@ var _ = require('underscore');
 load('application');
 
 before(function() {
-    // console.log(everyauth);
-    this.isLoggedIn = req.loggedIn;
-    if (this.isLoggedIn) {
-        this.user = req.user;
-    }
+    this.user = req.user;
 
     next();
 });
