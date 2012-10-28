@@ -61,6 +61,10 @@ passport.serializeUser(function(user, done) {
 
 passport.deserializeUser(function(userId, done) {
 	User.findOne({where: {userId: userId}}, function (err, user) {
+		// 第二引数をnullにしないとクッキーがクリアされないため
+		if (user == undefined) {
+			return done(err, null);
+		}
 		done(err, user);
 	});
 });
