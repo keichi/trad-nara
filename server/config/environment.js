@@ -4,10 +4,17 @@ var passport = require('passport');
 var TwitterStrategy = require('passport-twitter').Strategy;
 var FacebookStrategy = require('passport-facebook').Strategy;
 
+app.configure('production', function () {
+    app.SITE_URL = 'http://trads-jp.com/';
+});
+app.configure('development', function () {
+    app.SITE_URL = 'http://localhost:3000/';
+});
+
 passport.use(new TwitterStrategy({
 		consumerKey: '3g89M0nq4m8S6rWCtYh2w',
 		consumerSecret: 'D3HpxWjLVykBDVC9yk9bK0SsvazEXgo0q7HYk8Sq4',
-		callbackURL: 'http://localhost:3000/auth/twitter/callback'
+		callbackURL: app.SITE_URL + 'auth/twitter/callback'
 	},
 	function(token, tokenSecret, profile, done) {
 		console.log(profile);
@@ -34,7 +41,7 @@ passport.use(new TwitterStrategy({
 passport.use(new FacebookStrategy({
 		clientID: '385327488206734',
 		clientSecret: '1b9102af844b31ce167bcd3c315a6316',
-		callbackURL: 'http://localhost:3000/auth/facebook/callback'
+		callbackURL: app.SITE_URL + 'auth/facebook/callback'
 	},
 	function(accessToken, refreshToken, profile, done) {
 		console.log(profile);
