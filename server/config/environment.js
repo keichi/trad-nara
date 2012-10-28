@@ -56,12 +56,12 @@ passport.use(new FacebookStrategy({
 ));
 
 passport.serializeUser(function(user, done) {
-	done(null, user.id);
+	done(null, user.userId);
 });
 
-passport.deserializeUser(function(id, done) {
- 	User.findOne({where: {userId : id}}, function(err, user) {
- 		done(err, user);
+passport.deserializeUser(function(userId, done) {
+	User.findOne({where: {userId: userId}}, function (err, user) {
+		done(err, user);
 	});
 });
 
@@ -82,6 +82,7 @@ app.configure(function(){
 	});
 	app.use(express.session({cookie: {maxAge: 120000}, store: mongooseSessionStore, secret: "secret" }));
 	app.use(express.methodOverride());
+
 	app.use(passport.initialize());
 	app.use(passport.session());
     app.get('/auth/twitter', passport.authenticate('twitter'));
