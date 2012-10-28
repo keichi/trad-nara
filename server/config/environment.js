@@ -12,7 +12,7 @@ app.configure('development', function () {
 });
 
 function findOrCreateUser(profile, done) {
- 	User.findOne({userId : profile.id}, function(err, result) {
+ 	User.findOne({where: {userId : profile.id}}, function(err, result) {
  		if (err) {
  			return done(err);
  		}
