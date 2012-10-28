@@ -28,8 +28,8 @@ var Post = describe('Post', function () {
     property('body', Text);
     property('address', String);
     property('label', String);
-    property('created', Date);
-    property('modified', Date);
+    property('created', Date, {default: new Date()});
+    property('modified', Date, {default: new Date()});
     property('topimage', String);
     property('viewCount', Number, {default: 0});
     property('wpPostId', Number);
@@ -49,7 +49,7 @@ var User = describe('User', function() {
     property('userId', String);
     property('name', String);
     property('userName', String);
-    property('registered', Date, {default: Date.Now});
+    property('registered', Date, {default: new Date()});
     property('service', String);
 });
 
