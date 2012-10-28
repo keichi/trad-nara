@@ -24,7 +24,7 @@ function findOrCreateUser(profile, done) {
  				name : profile.displayName,
  				userName : profile.username,
  				service : profile.provider,
- 				registered : Date.now(),
+ 				registered : new Date(),
  			}, function (err, user) {
  				if (err) {
  					return done(err);
