@@ -24,7 +24,7 @@ function findOrCreateUser(profile, done) {
  				name : profile.displayName,
  				userName : profile.username,
  				service : profile.provider,
- 				registered : Date.Now,
+ 				registered : Date.now(),
  			}, function (err, user) {
  				if (err) {
  					return done(err);
@@ -74,13 +74,13 @@ app.configure(function(){
 	app.set('jsDirectory', '/javascripts/');
 	app.set('cssDirectory', '/stylesheets/');
 	app.use(express.bodyParser());
-	app.use(express.cookieParser('secret'));
+	app.use(express.cookieParser());
 
-	var mongooseSessionStore = new mongoStore({
+	var mongooseStore = new mongoStore({
 		url: "mongodb://localhost/trad_session",
 		interval: 120000 
 	});
-	app.use(express.session({cookie: {maxAge: 120000}, store: mongooseSessionStore, secret: "secret" }));
+	app.use(express.session({store: mongooseStore, secret: 'topsecret', maxAge: new Date(Date.now() + 3600000)}));
 	app.use(express.methodOverride());
 
 	app.use(passport.initialize());
