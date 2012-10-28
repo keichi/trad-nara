@@ -60,7 +60,7 @@ passport.serializeUser(function(user, done) {
 });
 
 passport.deserializeUser(function(id, done) {
- 	User.findOne({userId : id}, function(err, user) {
+ 	User.findOne({where: {userId : id}}, function(err, user) {
  		done(err, user);
 	});
 });
