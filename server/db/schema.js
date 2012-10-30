@@ -31,7 +31,7 @@ var Post = describe('Post', function () {
     property('created', Date);
     property('modified', Date);
     property('topimage', String);
-    property('viewCount', Number, {default: 0});
+    property('viewCount', Number, {default: 0, index: true});
     property('wpPostId', Number);
     property('category', String, {default: "Uncategorized"});
 });
@@ -40,30 +40,23 @@ var Image = describe('Image', function () {
     property('order', Number);
     property('url', String);
     property('caption', String);
+    property('postId', String);
 });
-
-Post.hasMany(Image, {as: 'images', foreignKey: 'postId'});
-Image.belongsTo(Post, {as: 'post', foreignKey: 'postId'});;
 
 var User = describe('User', function() {
     property('userId', String);
     property('name', String);
     property('userName', String);
-    property('registered', Date);
+    property('registered', Date, {default: function() {return new Date;}});
     property('service', String);
 });
 
 var FavoriteList = describe('FavoriteList', function() {
     property('name', String);
+    property('userId', String);
 });
-
-User.hasMany(FavoriteList, {as: 'favoriteLists', foreignKey: 'userId'});
-FavoriteList.belongsTo(User, {as: 'user', foreignKey: 'userId'});
 
 var FavoriteRelation = describe('FavoriteRelation', function() {
+    property('listRelationId', String);
+    property('postRelationId', String);
 });
-
-FavoriteRelation.hasMany(FavoriteList, {as: 'lists', foreignKey: 'favoriteRelationId'});
-FavoriteList.belongsTo(FavoriteRelation, {as: 'favoriteRelation', foreignKey: 'favoriteRelationId'});
-FavoriteRelation.hasMany(Post, {as: 'posts', foreignKey: 'favoriteRelationId'});
-Post.belongsTo(FavoriteRelation, {as: 'favoriteRelation', foreignKey: 'favoriteRelationId'});
