@@ -11,4 +11,4 @@ Post.beforeDestroy = function(next) {
 
 		next();
 	});
-}
+};

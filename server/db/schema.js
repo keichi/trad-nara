@@ -53,7 +53,7 @@ var User = describe('User', function() {
 
 var FavoriteList = describe('FavoriteList', function() {
     property('name', String);
-    property('userId', String);
+    property('userListId', String);
 });
 
 var FavoriteRelation = describe('FavoriteRelation', function() {

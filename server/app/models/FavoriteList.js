@@ -1,5 +1,6 @@
 var async = require('async');
 
+FavoriteList.belongsTo(User, {as: 'user', foreignKey: 'userListId'});
 FavoriteList.hasMany(FavoriteRelation, {as: 'favoriteRelations', foreignKey: 'listRelationId'});
 
 FavoriteList.prototype.getPosts = function(callback) {

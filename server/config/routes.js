@@ -3,6 +3,8 @@ exports.routes = function (map) {
     // feel free to remove generic routes
     map.root('top#home');
     map.get('/timeline', 'top#timeline');
+    map.get('/favorites', 'top#favorites');
+
     map.get('/login', 'top#login');
     map.get('/post/:id', 'post#show');
 

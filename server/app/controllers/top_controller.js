@@ -33,6 +33,23 @@ action('timeline', function () {
     });
 });
 
+action('favorites', function() {
+    if (!req.user) { return redirect('/login'); }
+
+    req.user.lists(function(err, lists) {
+        if (err || lists.length <= 0) {redirect('/');}
+        var list = lists[0];
+        
+        list.getPosts(function(err, posts) {
+            if (err) {return redirect('/');}
+            render('home', {
+                title: "TRAD NARA &raquo; Favorites",
+                posts: posts
+            });
+        });
+    });
+ });
+
 action('login', function() {
 	render({
 		title: "TRAD NARA &raquo; Login",
