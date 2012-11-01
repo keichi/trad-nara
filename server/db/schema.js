@@ -40,6 +40,7 @@ var Image = describe('Image', function () {
     property('order', Number);
     property('url', String);
     property('caption', String);
+    property('postId', String);
 });
 
 var User = describe('User', function() {
@@ -52,7 +53,10 @@ var User = describe('User', function() {
 
 var FavoriteList = describe('FavoriteList', function() {
     property('name', String);
+    property('userListId', String);
 });
 
 var FavoriteRelation = describe('FavoriteRelation', function() {
+    property('listRelationId', String);
+    property('postRelationId', String);
 });
