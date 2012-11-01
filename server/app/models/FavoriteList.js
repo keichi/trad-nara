@@ -45,11 +45,11 @@ FavoriteList.prototype.removePost = function(post, callback) {
 };
 
 FavoriteList.prototype.existsPost = function(post, callback) {
-	FavoriteRelation.count(
+	FavoriteRelation.all(
 		{where: {listRelationId: this.id, postRelationId: post.id}},
-		function(err, count) {
+		function(err, relations) {
 			if (err) {return callback(err);}
-			callback(null, count > 0);
+			callback(null, relations.length > 0);
 		}
 	);
 }
