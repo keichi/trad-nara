@@ -22,4 +22,8 @@ module.exports = {
                 return "http://dummyimage.com/25x25/ff6f00/fff&text=+";
         }
     },
+
+    star_icon_class : function(isFavorited) {
+        return isFavorited ? "icon-star" : "icon-star-empty";
+    },
 };

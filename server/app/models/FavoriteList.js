@@ -10,6 +10,7 @@ FavoriteList.prototype.getPosts = function(callback) {
 			relation.post(function(err, post) {
 				cb(err, post);
 			});
+			// TODO postが取得できななかった場合の処理を追記すべき
 		}, function(err, results) {
 			callback(err, results);
 		});

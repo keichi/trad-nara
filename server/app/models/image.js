@@ -1,1 +1,1 @@
-Image.belongsTo(Post, {as: 'post', foreignKey: 'postId'});;
+Image.belongsTo(Post, {as: 'post', foreignKey: 'postId'});

@@ -10,7 +10,7 @@ before(function() {
 });
 
 action('home', function () {
-    Post.all({order: 'viewCount DESC'}, function(err, posts) {
+    Post.allWithFavorite({order: 'viewCount DESC'}, req.user, function(err, posts) {
         if (err != null) {
             console.log("Error querying posts: " + err);
         }
@@ -22,7 +22,7 @@ action('home', function () {
 });
 
 action('timeline', function () {
-    Post.all({order: 'created DESC'}, function(err, posts) {
+    Post.allWithFavorite({order: 'created DESC'}, req.user, function(err, posts) {
         if (err != null) {
             console.log("Error querying posts: " + err);
         }
@@ -42,6 +42,8 @@ action('favorites', function() {
         
         list.getPosts(function(err, posts) {
             if (err) {return redirect('/');}
+
+            _(posts).each(function(post) {post.isFavorited = true;});
             render('home', {
                 title: "TRAD NARA &raquo; Favorites",
                 posts: posts
