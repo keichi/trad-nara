@@ -19,8 +19,11 @@ FavoriteList.prototype.getPosts = function(callback) {
 
 FavoriteList.prototype.addPost = function(post, callback) {
 	var relation = new FavoriteRelation();
-	relation.list(this);
-	relation.post(post);
+	var postId = typeof post == 'object' && 'id' in post ? post.id : post;
+	var listId = this.id;
+
+	relation.list(listId);
+	relation.post(postId);
 
 	relation.save(function(err) {
 		callback(err);
