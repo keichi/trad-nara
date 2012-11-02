@@ -15,8 +15,8 @@
 				<a class="meta-like" href="#" title="0 likes"><i class="icon-thumbs-up"></i>0</a>
 				<a class="meta-comments" href="#" title="0 comments"><i class="icon-comment-alt"></i>0</a>
 			</div>
-			<a class="meta-favorite" href="#" title="Favorite this post!">
-				<i class="<%= star_icon_class(posts[i].isFavorited) %>"></i>
+			<a class="meta-favorite" href="/favorites/switch/<%= posts[i].id %>?origin=<%= path %>" title="<%= posts[i].isFavorited ? 'Unfavorite' : 'Favorite' %> this post!">
+				<i class="<%= posts[i].isFavorited ? 'icon-star' : 'icon-star-empty' %>"></i>
 			</a>
 		</div>
 	</div>

@@ -17,13 +17,6 @@ $(document).ready(function() {
     function toggleStar($node) {        
     }
 
-    $('.meta-favorite').click(function() {
-        $(this).children().toggleClass('icon-star-empty');
-        $(this).children().toggleClass('icon-star');
-
-        return false;
-    });
-
     $('.top-scroll').click(function() {
         $(this).blur();
         $('html,body').animate({ scrollTop: 0 }, 'slow');

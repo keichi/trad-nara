@@ -5,6 +5,7 @@ load('application');
 
 before(function() {
     this.user = req.user;
+    this.path = req.path;
 
     next();
 });
