@@ -8,13 +8,6 @@
     font-size: 1.0em;
 }
 
-.clearfix {zoom:1;}
-.clearfix:after {
-  content: ""; 
-  display: block; 
-  clear: both;
-}
-
 a:hover {
     text-decoration: underline;
 }
@@ -149,6 +142,39 @@ body {
 .post-box .meta .meta-stats i {
     margin-right: 5px;
     color: #e8e8e8;
+}
+
+.post-box .post-tags {
+    margin: 5px auto;
+}
+
+.post-box .post-tag {
+    border-radius: 3px;
+    display: inline-block;
+    padding: 2px 4px;
+    font-size: 11.844px;
+    font-weight: bold;
+    line-height: 14px;
+    color: #ffffff;
+    text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.25);
+    white-space: nowrap;
+    vertical-align: baseline;
+}
+
+.post-box .tag-green {
+    background-color: #468847;
+}
+
+.post-box .tag-red {
+    background-color: #b94a48;
+}
+
+.post-box .tag-blue {
+    background-color: #3a87ad;
+}
+
+.post-box .tag-yellow {
+    background-color: #f89406;
 }
 
 #footer {

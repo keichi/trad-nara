@@ -58,3 +58,9 @@ action('login', function() {
 		title: "TRAD NARA &raquo; Login",
 	});
 });
+
+action('contributors', function() {
+    render({
+        title: "TRAD NARA &raquo; Contributors",
+    });
+});

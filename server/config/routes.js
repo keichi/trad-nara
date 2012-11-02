@@ -5,6 +5,7 @@ exports.routes = function (map) {
     map.get('/timeline', 'top#timeline');
     map.get('/favorites', 'top#favorites');
     map.get('/favorites/switch/:id', 'favorites#switch');
+    map.get('/contributors', 'top#contributors');
 
     map.get('/login', 'top#login');
     map.get('/post/:id', 'post#show');
