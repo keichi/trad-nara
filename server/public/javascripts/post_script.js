@@ -21,6 +21,8 @@ $(document).ready(function() {
         $(this).fadeTo(150, 1.0);
     });
     
+    $('.post a').powerTip();
+    
     // Googleマップの埋め込み
 	var gmg = new google.maps.Geocoder(), map, center, mk, iw;
     gmg.geocode({
