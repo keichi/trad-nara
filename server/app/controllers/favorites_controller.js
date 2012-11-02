@@ -13,8 +13,18 @@ action('switch', function () {
 	        if (err || lists.length <= 0) {backToOrigin();}
 	        var list = lists[0];
 	        
-	        list.addPost(req.params.id, function(err) {
-	        	backToOrigin();
+	        list.existsPost(req.params.id, function(err, exists) {
+	        	if (err) {backToOrigin();}
+
+	        	if (exists) {
+			        list.removePost(req.params.id, function(err) {
+			        	backToOrigin();
+			        });
+	        	} else {
+			        list.addPost(req.params.id, function(err) {
+			        	backToOrigin();
+			        });
+	        	}
 	        });
 	    });
 	} else {

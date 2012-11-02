@@ -28,8 +28,10 @@ FavoriteList.prototype.addPost = function(post, callback) {
 };
 
 FavoriteList.prototype.removePost = function(post, callback) {
+	var postId = typeof post == 'object' && 'id' in post ? post.id : post;
+
 	FavoriteRelation.all(
-		{where: {listRelationId: this.id, postRelationId: post.id}},
+		{where: {listRelationId: this.id, postRelationId: postId}},
 		function(err, relations) {
 			if (err) { return callback(err); }
 			async.forEach(
@@ -46,8 +48,10 @@ FavoriteList.prototype.removePost = function(post, callback) {
 };
 
 FavoriteList.prototype.existsPost = function(post, callback) {
+	var postId = typeof post == 'object' && 'id' in post ? post.id : post;
+
 	FavoriteRelation.findOne(
-		{where: {listRelationId: this.id, postRelationId: post.id}},
+		{where: {listRelationId: this.id, postRelationId: postId}},
 		function(err, relation) {
 			if (err) {return callback(err);}
 			callback(null, relation ? true : false);
