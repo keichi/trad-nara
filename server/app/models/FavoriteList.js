@@ -1,4 +1,5 @@
 var async = require('async');
+var _ = require('underscore');
 
 FavoriteList.belongsTo(User, {as: 'user', foreignKey: 'userListId'});
 FavoriteList.hasMany(FavoriteRelation, {as: 'favoriteRelations', foreignKey: 'listRelationId'});
@@ -12,7 +13,7 @@ FavoriteList.prototype.getPosts = function(callback) {
 			});
 			// TODO postが取得できななかった場合の処理を追記すべき
 		}, function(err, results) {
-			callback(err, results);
+			callback(err, _(results).filter(function(post) {return post}));
 		});
 	});
 };

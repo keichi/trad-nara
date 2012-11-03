@@ -1,6 +1,6 @@
 
 <% for(var i = 0; i < posts.length; i++) { %>
-	<div class="post-box">
+	<div id="post-<%= posts[i].id %>" class="post-box">
 		<img src="<%- posts[i].topimage %>" alt="thumbnail" width="300" height="200"/>
 		<div class="contenthover"><%- posts[i].lead %></div>
 		<div class="ribbon-wrapper"><div class="ribbon ribbon-<%= ribbon_color(posts[i].category) %>"><%= posts[i].category %></div></div>
@@ -15,7 +15,7 @@
 				<a class="meta-like" href="#" title="0 likes"><i class="icon-thumbs-up"></i>0</a>
 				<a class="meta-comments" href="#" title="0 comments"><i class="icon-comment-alt"></i>0</a>
 			</div>
-			<a class="meta-favorite" href="/favorites/switch/<%= posts[i].id %>?origin=<%= path %>" title="<%= posts[i].isFavorited ? 'Unfavorite' : 'Favorite' %> this post!">
+			<a class="meta-favorite" href="#" title="<%= posts[i].isFavorited ? 'Unfavorite' : 'Favorite' %> this post!">
 				<i class="<%= posts[i].isFavorited ? 'icon-star' : 'icon-star-empty' %>"></i>
 			</a>
 		</div>
