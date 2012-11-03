@@ -3,6 +3,13 @@ load('application');
 var _ = require('underscore');
 var async = require('async');
 
+before(function() {
+    this.user = req.user;
+    this.path = req.path;
+
+    next();
+});
+
 action('create', function () {
     var data = req.body;
 
@@ -74,7 +81,8 @@ action('delete', function () {
 });
 
 action('show', function () {
-    layout(false);
+    layout('application');
+
     Post.find(req.params.id, function(err, post) {
         if (post == null) {
             redirect('/');

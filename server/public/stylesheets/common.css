@@ -1,0 +1,165 @@
+*{
+    margin: 0;
+    padding: 0;
+    color: #ccc;
+    text-decoration: none;
+    font-weight: normal;
+    font-style: normal;
+    font-size: 1.0em;
+}
+
+body {
+    background-color: #3b3f44;
+    background-image: url('/images/bg.png');
+    background-attachment: fixed;
+}
+
+#wrapper {
+    margin-top: 5px;
+    margin-bottom: 5px;
+    color: #d0d0d0;
+}
+
+#container {
+    position: relative;
+    margin: 90px auto 20px;
+    max-width: 1000px;
+    width: 90%;
+}
+
+#footer {
+    border-top: 1px solid #777;
+}
+
+#footer-miscs {
+    width: 300px;
+    font-size: 12px;
+    margin: 10px auto;
+}
+
+#footer-miscs span {
+    margin-left: 3px;
+    margin-right: 3px;
+    color: #777;
+}
+
+#navigation {
+    position: fixed;
+    top: 50px;
+    z-index: 1000;
+    width: 100%;
+    height: 25px;
+    border: 1px solid #aeaeae;
+    -webkit-border-radius: : 5px;
+    -moz-border-radius: 5px;
+    border-radius: 5px;
+    background-color: #eee;
+
+    background-color: #dadada;
+    background-image: -moz-linear-gradient(top, #eeeeee, #bbbbbb);
+    background-image: -webkit-gradient(linear, 0 0, 0 100%, from(#eeeeee), to(#bbbbbb));
+    background-image: -webkit-linear-gradient(top, #eeeeee, #bbbbbb);
+    background-image: -o-linear-gradient(top, #eeeeee, #bbbbbb);
+    background-image: linear-gradient(to bottom, #eeeeee, #bbbbbb);
+    background-repeat: repeat-x;
+
+    -webkit-box-shadow: 0 1px 0 rgba(255, 255, 255, 0.4) , 0 0 10px rgba(0, 0, 0, 0.1);
+    -moz-box-shadow: 0 1px 0 rgba(255, 255, 255, 0.4) , 0 0 10px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 1px 0 rgba(255, 255, 255, 0.4) , 0 0 10px rgba(0, 0, 0, 0.1);
+    text-align: center;
+
+    text-shadow: 0px 1px 0px #fff;
+    letter-spacing: -.40em;
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#ffeeeeee', endColorstr='#ffbbbbbb', GradientType=0);
+}
+
+#navigation li {
+    display: inline-block;
+    background-color: #dadada;
+    background-image: -moz-linear-gradient(top, #eeeeee, #bbbbbb);
+    background-image: -webkit-gradient(linear, 0 0, 0 100%, from(#eeeeee), to(#bbbbbb));
+    background-image: -webkit-linear-gradient(top, #eeeeee, #bbbbbb);
+    background-image: -o-linear-gradient(top, #eeeeee, #bbbbbb);
+    background-image: linear-gradient(to bottom, #eeeeee, #bbbbbb);
+    background-repeat: repeat-x;
+    list-style-type: none;
+    letter-spacing: normal;
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#ffeeeeee', endColorstr='#ffbbbbbb', GradientType=0);
+}
+
+#navigation li:active {
+    background-image: -moz-linear-gradient(top, #bbbbbb, #eeeeee);
+    background-image: -webkit-gradient(linear, 0 0, 0 100%, from(#bbbbbb), to(#eeeeee));
+    background-image: -webkit-linear-gradient(top, #bbbbbb, #eeeeee);
+    background-image: -o-linear-gradient(top, #bbbbbb, #eeeeee);
+    background-image: linear-gradient(to bottom, #bbbbbb, #eeeeee);
+    background-repeat: repeat-x;
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#ffbbbbbb', endColorstr='#ffeeeeee', GradientType=0);
+}
+
+#navigation li a {
+    display: block;
+    padding-top: 5px;
+    padding-left: 5px;
+    height: 20px;
+    text-align: center;
+    color: #555;
+    font-weight: bold;
+    font-size: 0.9em;
+    margin-left: 10px;
+    margin-right: 10px;
+}
+
+#navigation a:hover {
+    text-decoration: none;
+}
+
+#header {
+    position: fixed;
+    top: 0px;
+    left: 0px;
+    z-index: 1000;
+    margin-bottom: 10px;
+    height: 50px;
+    background-color: #505050;
+    width: 100%;
+}
+
+#header a h1 {
+    overflow: hidden;
+    width: 284px;
+    height: 40px;
+    margin: 5px auto;
+
+    background-image: url('/images/logo.png');
+    background-repeat: no-repeat;
+    text-indent: 100%;
+    white-space: nowrap;
+}
+
+#user-info {
+    position: absolute;
+    right: 30px;
+    top: 10px;
+    background-color: #333;
+    color: #eee;
+    -webkit-box-shadow: inset 1px 1px 1px rgba(0, 0, 0, 0.5);
+    -moz-box-shadow: inset 1px 1px 1px rgba(0, 0, 0, 0.5);
+    box-shadow: inset 1px 1px 1px rgba(0, 0, 0, 0.5);
+    border-radius: 4px;
+    font-weight: bold;
+    font-size: 13px;
+    padding: 5px 10px;
+}
+
+#user-info img {
+    vertical-align: middle;
+    margin-right: 10px;
+}
+
+.clearfix {zoom: 1;}
+.clearfix:after {
+    content: "";
+    display: block;
+    clear: both;
+}
