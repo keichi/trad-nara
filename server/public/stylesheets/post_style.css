@@ -1,14 +1,5 @@
-*{  
-    margin: 0;  
-    padding: 0;
-}
-
 body {
-    background-color: #3b3f44;
-    background-image: url('/images/bg.png');
-    background-attachment: fixed;
     font-family: "HelveticaNeueLight", "HelveticaNeue-Light", "Helvetica Neue Light", "HelveticaNeue", "Helvetica Neue", 'TeXGyreHerosRegular', "Helvetica", "Tahoma", "Geneva", "Arial", sans-serif; font-weight:300; font-stretch:normal;
-    font-weight: 300;
 }
 
 a {
@@ -20,39 +11,11 @@ a:hover {
     color: #555;
 }
   
-#wrapper{
-    text-align: left;  
-    width: 90%;  
-    margin: 0 auto;
-    color: #d0d0d0;
-    max-width: 1100px;
-}  
-
-#header {
-    height: 40px;
-}
-
-#header a h1 {
-    overflow: hidden;
-    width: 284px;
-    height: 40px;
-    margin: 5px auto;
-
-    background-image: url('/images/logo.png');
-    background-repeat: no-repeat;
-    text-indent: 100%;
-    white-space: nowrap;
-}
-
-#container{  
-    width: 74%;  
-    float: left;
-}  
-  
 #contents{  
     position: relative;
-    width: 90%;
+    width: 74%;
     margin: 0 auto;
+    float: left;
 }
 
 #contents h1 {
@@ -143,14 +106,14 @@ a:hover {
     margin: 10px auto;
 }
 
- #gmap .location-name {
+#gmap .location-name {
     color: #000;
     font-size: 1.5em;
     margin: 5px 0px 10px 0px;
     text-shadow: 1px 1px 0px #222;
 }
 
- #gmap .location-address {
+#gmap .location-address {
     color: #555;
     padding-bottom: 10px;
     border-bottom: 1px solid #ccc;
@@ -233,20 +196,6 @@ a:hover {
 #sidebar ul li.widget-container img {
     width: 100%;
     height: auto;
-}
-  
-#footer{
-    margin: 10px auto;
-    border-top: 3px solid #333;
-    clear: both;  
-    text-align: center;
-    color: #999;
-    font-size: 11px;
-}
-
-#footer img {
-    vertical-align: middle;
-    margin-right: 5px;
 }
 
 @media screen and (max-width: 480px){

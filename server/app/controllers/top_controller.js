@@ -1,5 +1,4 @@
 var _ = require('underscore');
-// var everyauth = require('everyauth');
 
 load('application');
 
