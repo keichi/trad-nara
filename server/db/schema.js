@@ -34,6 +34,7 @@ var Post = describe('Post', function () {
     property('viewCount', Number, {default: 0, index: true});
     property('wpPostId', Number);
     property('category', String, {default: "Uncategorized"});
+    property('slug', String, {index: true});
 });
  
 var Image = describe('Image', function () {

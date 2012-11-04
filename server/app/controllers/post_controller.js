@@ -3,6 +3,14 @@ load('application');
 var _ = require('underscore');
 var async = require('async');
 
+function createSlug(title) {
+    title = title.toLowerCase();
+    title = title.replace(/[^a-zA-Z0-9\s-]/g, '');
+    title = title.replace(/\s+/g, ' ');
+    title = title.replace(/\s/g, '-');
+    return title;
+}
+
 before(function() {
     this.user = req.user;
     this.path = req.path;
@@ -37,6 +45,7 @@ action('create', function () {
             post.modified = new Date(data.modified);
             post.created = new Date(data.created);
             post.category = data.category;
+            post.slug = createSlug(post.title);
 
             if (data.topimage != undefined) {
                post.topimage = data.topimage.src;
@@ -83,7 +92,7 @@ action('delete', function () {
 action('show', function () {
     layout('application');
 
-    Post.find(req.params.id, function(err, post) {
+    Post.findOne({where: {slug: req.params.slug}}, function(err, post) {
         if (post == null) {
             redirect('/');
         } else {
@@ -92,7 +101,7 @@ action('show', function () {
             post.images(function(err, images) {
                 post.imageurls = _(images).sortBy(function(img) {return img.order;});
                 render({
-                    title  :   'post#show',
+                    title  :   'TRAD NARA &raquo; ' + post.title,
                     post   :    post,
                     url    :    'http://' + req.headers.host + req.path
                 });

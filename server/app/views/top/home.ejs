@@ -6,7 +6,7 @@
 		<div class="ribbon-wrapper"><div class="ribbon ribbon-<%= ribbon_color(posts[i].category) %>"><%= posts[i].category %></div></div>
                 
 		<div class="title-author">
-			<h2 class="post-title"><%- link_to(posts[i].title, '/post/' + posts[i].id) %></h2>
+			<h2 class="post-title"><%- link_to(posts[i].title, '/post/' + posts[i].slug) %></h2>
 			<div class="post-author"><span class="post-author-by">by </span><a href="#"><%= posts[i].author %></a></div>
 		</div>
 		<div class="meta">

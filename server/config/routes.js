@@ -8,7 +8,7 @@ exports.routes = function (map) {
     map.get('/contributors', 'top#contributors');
 
     map.get('/login', 'top#login');
-    map.get('/post/:id', 'post#show');
+    map.get('/post/:slug', 'post#show');
 
     // Internal routes
     map.post('/internal/post/create', 'post#create');
