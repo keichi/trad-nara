@@ -3,3 +3,13 @@ before('protect from forgery', function () {
 }, {
     only : [],
 });
+
+before(function() {
+    var port = req.port;
+
+    this.user = req.user;
+    this.path = req.path;
+    this.url = req.protocol + '://' + req.headers.host + req.path;
+
+    next();
+});

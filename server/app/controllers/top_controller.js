@@ -2,20 +2,13 @@ var _ = require('underscore');
 
 load('application');
 
-before(function() {
-    this.user = req.user;
-    this.path = req.path;
-
-    next();
-});
-
 action('home', function () {
     Post.allWithFavorite({order: 'viewCount DESC'}, req.user, function(err, posts) {
         if (err != null) {
             console.log("Error querying posts: " + err);
         }
         render({
-            title: "TRAD NARA &raquo; Home",
+            title: "Home",
             posts: posts
         });
     });
@@ -27,7 +20,7 @@ action('timeline', function () {
             console.log("Error querying posts: " + err);
         }
         render('home', {
-            title: "TRAD NARA &raquo; Timeline",
+            title: "Timeline",
             posts: posts
         });
     });
@@ -45,7 +38,7 @@ action('favorites', function() {
 
             _(posts).each(function(post) {post.isFavorited = true;});
             render('home', {
-                title: "TRAD NARA &raquo; Favorites",
+                title: "Favorites",
                 posts: posts
             });
         });
@@ -54,12 +47,12 @@ action('favorites', function() {
 
 action('login', function() {
 	render({
-		title: "TRAD NARA &raquo; Login",
+		title: "Login",
 	});
 });
 
 action('contributors', function() {
     render({
-        title: "TRAD NARA &raquo; Contributors",
+        title: "Contributors",
     });
 });

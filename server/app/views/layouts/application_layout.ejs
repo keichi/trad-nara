@@ -1,13 +1,18 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:og="http://ogp.me/ns#" xmlns:fb="http://ogp.me/ns/fb#" xml:lang="en">
 <head>
 	<meta name="keywords" content="Nara, Tourism, Sightseeing, Travel Guide">
     <meta name="description" content="Discover traditional Nara !" />
     <meta name="robots" content="index,follow,archive" /> 
-    <meta http-equiv="content-language" content="en" />
+    <meta http-equiv="Content-Language" content="en" />
     <meta http-equiv="Content-Type" content="text/html;charset=UTF-8" />
-
-    <title><%= title %></title>
+    <meta property="og:title" content="<%= title %>" />
+    <meta property="og:type" content="article" />
+    <meta property="og:url" content="<%= url %>" />
+    <meta property="og:site_name" content="Trad Nara" />
+    <meta property="fb:app_id" content="385327488206734" />
+    
+    <title>Trad Nara &raquo; <%= title %></title>
 
     <link rel="shortcut icon" href="/images/favicon.ico"/>
     <% if (path.indexOf('/post/') == 0) { %>
@@ -19,6 +24,16 @@
     <% } %>
 </head>
 <body>
+    <!-- Facebook Javascript SDK -->
+    <div id="fb-root"></div>
+    <script>(function(d, s, id) {
+      var js, fjs = d.getElementsByTagName(s)[0];
+      if (d.getElementById(id)) return;
+      js = d.createElement(s); js.id = id;
+      js.src = "//connect.facebook.net/ja_JP/all.js#xfbml=1&appId=385327488206734";
+      fjs.parentNode.insertBefore(js, fjs);
+    }(document, 'script', 'facebook-jssdk'));</script>
+
     <div id="wrapper">
         <div id="header">
 			<a href="/"><h1>TRAD NARA</h1></a>

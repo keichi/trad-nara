@@ -11,13 +11,6 @@ function createSlug(title) {
     return title;
 }
 
-before(function() {
-    this.user = req.user;
-    this.path = req.path;
-
-    next();
-});
-
 action('create', function () {
     var data = req.body;
 
@@ -101,7 +94,7 @@ action('show', function () {
             post.images(function(err, images) {
                 post.imageurls = _(images).sortBy(function(img) {return img.order;});
                 render({
-                    title  :   'TRAD NARA &raquo; ' + post.title,
+                    title  :    post.title,
                     post   :    post,
                     url    :    'http://' + req.headers.host + req.path
                 });
