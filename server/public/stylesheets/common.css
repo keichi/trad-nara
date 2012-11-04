@@ -32,15 +32,21 @@ body {
 }
 
 #footer-miscs {
-    width: 300px;
     font-size: 12px;
-    margin: 10px auto;
+    text-align: center;
+    margin: 2px auto;
 }
 
 #footer-miscs span {
     margin-left: 3px;
     margin-right: 3px;
     color: #777;
+}
+
+#footer-copyright {
+    font-size: 12px;
+    text-align: center;
+    margin: 2px auto;
 }
 
 #navigation {
