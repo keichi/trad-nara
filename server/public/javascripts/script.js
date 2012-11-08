@@ -22,7 +22,7 @@ $(document).ready(function() {
         return false;
     });
 
-    $('.meta-favorite, .meta-view, .meta-like, .meta-comments, #navigation li a').powerTip();
+    $('.meta-favorite, .meta-view, .meta-comments, #navigation li a').powerTip();
 
     $('.title-author .post-title a', $box).each(function() {
         var url = root + $(this).attr('href');
@@ -32,7 +32,8 @@ $(document).ready(function() {
             function(data) {
                 var count = data.shares || 0;
                 like.append(String(count));
-                like.attr('title', count + ' likes');
+                like.attr('title', String(count) + ' likes');
+                like.powerTip();
             }
             );
     });
