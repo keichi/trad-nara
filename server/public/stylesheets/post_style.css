@@ -29,9 +29,16 @@ a:hover {
 }
 
 #contents .share {
-    width: 100%;
-    margin-top: 5px;
-    margin-left: 5px;
+    margin: 5px;
+    height: 20px;
+}
+
+#contents .share a {
+    vertical-align: top;
+}
+
+#contents .share .fb_iframe_widget {
+    vertical-align: top;
 }
 
 #contents .post {

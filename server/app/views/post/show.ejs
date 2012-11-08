@@ -1,19 +1,11 @@
 <div id="contents">
     <h1><a href="#" title="Hello world!"><%= post.title %></a></h1>         
     <div class="share">
-        <a href="http://www.facebook.com/share.php?u=<%= uriencode(url) %>">
-           <img src="/images/icon/facebook_32.png" alt="facebook_32" width="32" height="32" /></a>
-        <a href="http://twitter.com/home?status=<%= post.title %> <%- url %>">
-           <img src="/images/icon/twitter_32.png" alt="twitter_32" width="32" height="32" /></a>
-        <a href="http://del.icio.us/post?v=3&noui=yes&jump=close&url=<%= uriencode(url) %>&title=<%= uriencode(post.title) %>">
-           <img src="/images/icon/delicious_32.png" alt="delicious_32" width="32" height="32" /></a>
-        <a href="http://digg.com/submit?url=<%= uriencode(url) %>&phase=2">
-           <img src="/images/icon/digg_32.png" alt="digg_32" width="32" height="32" /></a>
-        <a href="https://plus.google.com/share?url=<%= uriencode(url) %>">
-           <img src="/images/icon/google_plus_32.png" alt="google_plus_32" width="32" height="32" /></a>
-        <a href="mailto:?subject=Share%20it&amp;body=<%= uriencode(url) %>">
-           <img src="/images/icon/email_32.png" alt="email_32" width="32" height="32" /></a>
-        <fb:like send="false" layout="button_count" width="200" show_faces="false" colorscheme="light"></fb:like>
+        <fb:like send="false" layout="button_count" width="100" show_faces="false" colorscheme="light"></fb:like>
+        <a href="https://twitter.com/share" class="twitter-share-button">Tweet</a>
+        <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0];if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src="//platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
+        <g:plusone size="medium"></g:plusone>
+        <a href="http://www.tumblr.com/share" title="Share on Tumblr" style="display:inline-block; text-indent:-9999px; overflow:hidden; width:81px; height:20px; background:url('http://platform.tumblr.com/v1/share_1.png') top left no-repeat transparent;">Share on Tumblr</a>
     </div>
     <div class="flexslider">
        <ul class="slides">
