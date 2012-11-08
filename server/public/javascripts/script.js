@@ -31,8 +31,8 @@ $(document).ready(function() {
             'https://graph.facebook.com/' + url + '&callback=?',
             function(data) {
                 var count = data.shares || 0;
-                var title_author = 
                 like.append(String(count));
+                like.attr('title', count + ' likes');
             }
             );
     });
