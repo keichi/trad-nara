@@ -1,13 +1,6 @@
 @import 'nib'
 
-*
-  margin: 0
-  padding: 0
-  color: #ccc
-  text-decoration: none
-  font-weight: normal
-  font-style: normal
-  font-size: 1.0em
+global-reset()
 
 body
   background-color: #3b3f44
@@ -32,11 +25,10 @@ body
   font-size: 12px
   text-align: center
   margin: 2px auto
-
-#footer-miscs span
-  margin-left: 3px
-  margin-right: 3px
-  color: #777
+  span
+    margin-left: 3px
+    margin-right: 3px
+    color: #777
 
 #footer-copyright
   font-size: 12px
@@ -55,31 +47,26 @@ body
   box-shadow: 0 1px 0 rgba(255, 255, 255, 0.4) , 0 0 10px rgba(0, 0, 0, 0.1)
   text-align: center
   text-shadow: 0px 1px 0px #fff
-
-#navigation li
-  display: inline-block
-  background-color: #dadada
-  background: linear-gradient(top, #eeeeee, #bbbbbb)
-  list-style-type: none
-  letter-spacing: normal
-
-#navigation li:active
-  background: linear-gradient(bottom, #eeeeee, #bbbbbb)
-
-#navigation li a
-  display: block
-  padding-top: 5px
-  padding-left: 5px
-  height: 20px
-  text-align: center
-  color: #555
-  font-weight: bold
-  font-size: 0.9em
-  margin-left: 10px
-  margin-right: 10px
-
-#navigation a:hover
-  text-decoration: none
+  li
+    display: inline-block
+    background-color: #dadada
+    background: linear-gradient(top, #eeeeee, #bbbbbb)
+    list-style-type: none
+    letter-spacing: normal
+    &:active
+      background: linear-gradient(bottom, #eeeeee, #bbbbbb)
+    a
+      display: block
+      padding-top: 5px
+      padding-left: 5px
+      height: 20px
+      text-align: center
+      color: #555
+      font-weight: bold
+      font-size: 0.9em
+      margin-left: 10px
+      margin-right: 10px
+      text-decoration: none;
 
 #header
   position: fixed
@@ -90,16 +77,12 @@ body
   height: 50px
   background-color: #505050
   width: 100%
-
-#header a h1
-  overflow: hidden
-  width: 284px
-  height: 40px
-  margin: 5px auto
-  background-image: url('/images/logo.png')
-  background-repeat: no-repeat
-  text-indent: 100%
-  white-space: nowrap
+  a h1
+    width: 284px
+    height: 40px
+    margin: 5px auto
+    background-image: url('/images/logo.png')
+    hide-text()
 
 #user-info
   position: absolute
@@ -112,16 +95,9 @@ body
   font-weight: bold
   font-size: 13px
   padding: 5px 10px
-
-#user-info img
-  vertical-align: middle
-  margin-right: 10px
+  img
+    vertical-align: middle
+    margin-right: 10px
 
 .clearfix
-  zoom: 1
-
-.clearfix:after
-  content: ""
-  display: block
-  clear: both
-
+  clearfix()

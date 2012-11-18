@@ -6,6 +6,10 @@ body
 a:hover
   text-decoration: underline
 
+#container.jsReady .post-box
+  position: absolute
+  margin: 0
+
 .post-box
   position: relative
   display: none
@@ -18,94 +22,79 @@ a:hover
   box-shadow: 0 2px 4px #000
   color: #ccc
 
-#container.jsReady .post-box
-  position: absolute
-  margin: 0
+  img
+    border-top-right-radius: 3px
+    border-top-left-radius: 3px
+  .contenthover
+    display: none
+    padding: 20px
+    background-image: url('/images/quote.png')
+    background-repeat: no-repeat
+    color: #fff
+    text-indent: 50px
+    font-style: italic
+    line-height: 1.2em
 
-.post-box img
-  border-top-right-radius: 3px
-  border-top-left-radius: 3px
+  .title-author
+    margin-top: 20px
+    margin-right: 20px
+    margin-left: 20px
+    height: 80px
+    border-bottom: 1px solid #a0a0a0
+    h2.post-title a
+      color: #eee
+      text-shadow: 0px -1px 0px #000
+      font-size: 1.2em
+    .post-author
+      margin: 10px auto
+    .post-author-by
+      color: #888
+      font-style: italic
 
-.post-box .contenthover
-  display: none
-  padding: 20px
-  background-image: url('/images/quote.png')
-  background-repeat: no-repeat
-  color: #fff
-  text-indent: 50px
-  font-style: italic
-  line-height: 1.2em
+  .meta
+    margin: 0px 20px 0px 20px
+    border-top: 1px solid #000
+    vertical-align: middle
+    font-size: 1em
+    .meta-stats
+      display: inline-block
+      padding-top: 10px
+      padding-bottom: 10px
+      width: 200px
+      a
+        margin-right: 5px
+        color: #e8e8e8
+        text-decoration: none
+        text-shadow: 0 -1px 0 #000
+      i
+        margin-right: 5px
+        color: #e8e8e8
+    .meta-favorite
+      display: inline-block
+      padding-top: 5px
+      padding-bottom: 5px
+      width: 50px
+      border-left: 1px solid #a0a0a0
+      text-align: center
+      text-decoration: none
+      i
+        color: #E9A735
+        font-size: 20px
 
-.post-box .title-author
-  margin-top: 20px
-  margin-right: 20px
-  margin-left: 20px
-  height: 80px
-  border-bottom: 1px solid #a0a0a0
-
-.post-box .title-author h2.post-title a
-  color: #eee
-  text-shadow: 0px -1px 0px #000
-  font-size: 1.2em
-
-.post-box .title-author .post-author
-  margin: 10px auto
-
-.post-box .title-author .post-author .post-author-by
-  color: #888
-  font-style: italic
-
-.post-box .meta
-  margin-right: 20px
-  margin-bottom: 0px
-  margin-left: 20px
-  border-top: 1px solid #000
-  vertical-align: middle
-  font-size: 1em
-
-.post-box .meta .meta-stats
-  display: inline-block
-  padding-top: 10px
-  padding-bottom: 10px
-  width: 200px
-
-.post-box .meta .meta-favorite
-  display: inline-block
-  padding-top: 5px
-  padding-bottom: 5px
-  width: 50px
-  border-left: 1px solid #a0a0a0
-  text-align: center
-  text-decoration: none
-
-.post-box .meta .meta-favorite i
-  color: #E9A735
-  font-size: 20px
-
-.post-box .meta .meta-stats a
-  margin-right: 5px
-  color: #e8e8e8
-  text-decoration: none
-  text-shadow: 0 -1px 0 #000
-
-.post-box .meta .meta-stats i
-  margin-right: 5px
-  color: #e8e8e8
-
-.post-box .post-tags
-  margin: 5px auto
-
-.post-box .post-tag
-  border-radius: 3px
-  display: inline-block
-  padding: 2px 4px
-  font-size: 11.844px
-  font-weight: bold
-  line-height: 14px
-  color: #ffffff
-  text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.25)
-  white-space: nowrap
-  vertical-align: baseline
+.post-box
+  .post-tags
+    margin: 5px auto
+  .post-tag
+    border-radius: 3px
+    display: inline-block
+    padding: 2px 4px
+    font-size: 11.844px
+    font-weight: bold
+    line-height: 14px
+    color: #ffffff
+    text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.25)
+    white-space: nowrap
+    vertical-align: baseline
 
 .post-box .tag-green
   background-color: #468847
@@ -121,9 +110,8 @@ a:hover
 
 #loginlinks
   text-align: center
-
-#loginlinks ul
-  list-style-type: none
+  ul
+    list-style-type: none
 
 #loading
   margin: 0 auto
@@ -132,9 +120,7 @@ a:hover
 
 .ribbon
   transform: rotate(45deg)
-  position: relative
-  left: 3px
-  top: 35px
+  relative: left 3px top 35px
   width: 200px
   padding-top: 6px
   padding-bottom: 6px
@@ -162,8 +148,6 @@ a:hover
   overflow: hidden
   width: 150px
   height: 150px
-  position: absolute
-  top: 0px
-  right: 0px
+  absolute: top right
   z-index: 100
 
