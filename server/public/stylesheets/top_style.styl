@@ -1,7 +1,12 @@
 @import 'nib'
+@import 'tools'
 
 body
   font-family: "Arial", "Geneva", "Lucida Grande", "Verdana", sans-serif
+
+a
+  text-decoration: none
+  color: #eee
 
 a:hover
   text-decoration: underline
@@ -18,9 +23,10 @@ a:hover
   height: 350px
   border: none
   border-radius: 5px
-  background-color: #333
+  background-color: #444
   box-shadow: 0 2px 4px #000
   color: #ccc
+  text-shadow: 0 -1px 0 rgba(0, 0, 0, 1);
 
   img
     border-top-right-radius: 3px
@@ -40,20 +46,19 @@ a:hover
     margin-right: 20px
     margin-left: 20px
     height: 80px
-    border-bottom: 1px solid #a0a0a0
+    line-bottom: 1.0 0.2
     h2.post-title a
       color: #eee
-      text-shadow: 0px -1px 0px #000
       font-size: 1.2em
     .post-author
       margin: 10px auto
+      color: #eee
     .post-author-by
       color: #888
       font-style: italic
 
   .meta
     margin: 0px 20px 0px 20px
-    border-top: 1px solid #000
     vertical-align: middle
     font-size: 1em
     .meta-stats
@@ -61,11 +66,11 @@ a:hover
       padding-top: 10px
       padding-bottom: 10px
       width: 200px
+      line-right: 1.0 0.2
       a
         margin-right: 5px
         color: #e8e8e8
         text-decoration: none
-        text-shadow: 0 -1px 0 #000
       i
         margin-right: 5px
         color: #e8e8e8
@@ -74,7 +79,6 @@ a:hover
       padding-top: 5px
       padding-bottom: 5px
       width: 50px
-      border-left: 1px solid #a0a0a0
       text-align: center
       text-decoration: none
       i
