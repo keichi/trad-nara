@@ -43,6 +43,20 @@ $(document).ready(function() {
         return false;
     });
 
+    $('.post-title a').click(function() {
+        $('.modal-contributor').fadeIn();
+        $('#shade').fadeIn();
+
+        return false;
+    });
+
+    $('#shade').click(function() {
+        $('.modal-contributor').fadeOut();
+        $(this).fadeOut();
+
+        return false;
+    });
+
     function init() {
         $container.addClass('jsReady');
         $box.css({
