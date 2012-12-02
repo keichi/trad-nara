@@ -62,3 +62,9 @@ action('privacyPolicy', function() {
         title: "Privacy Policy",
     });
 });
+
+action('contactTeam', function() {
+    render({
+        title: "Contact Team",
+    });
+});

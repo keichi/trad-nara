@@ -138,7 +138,7 @@ $(document).ready(function() {
         });
     }
 
-    if ($('#loginlinks').length == 0 && $('#privacy-policy').length == 0) {
+    if ($('#loginlinks').length == 0 && $('#privacy-policy').length == 0 && $('#contact-team').length == 0) {
       	// イベントの登録
       	$(window).bind('load resize', layout);
 

@@ -7,6 +7,7 @@ exports.routes = function (map) {
     map.get('/favorites/switch', 'favorites#switch');
     map.get('/contributors', 'top#contributors');
     map.get('/privacy-policy', 'top#privacyPolicy');
+    map.get('/contact-team', 'top#contactTeam')
 
     map.get('/login', 'top#login');
     map.get('/post/:slug', 'post#show');
