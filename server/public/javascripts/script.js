@@ -43,7 +43,7 @@ $(document).ready(function() {
         return false;
     });
 
-    $('.post-title a').click(function() {
+    $('.contributor .post-title a').click(function() {
         $('.modal-contributor').fadeIn();
         $('#shade').fadeIn();
 
@@ -138,7 +138,7 @@ $(document).ready(function() {
         });
     }
 
-    if ($('#loginlinks').length == 0) {
+    if ($('#loginlinks').length == 0 && $('#privacy-policy').length == 0) {
       	// イベントの登録
       	$(window).bind('load resize', layout);
 

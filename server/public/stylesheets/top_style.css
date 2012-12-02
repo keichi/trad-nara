@@ -1,5 +1,5 @@
 body{font-family:"Arial","Geneva","Lucida Grande","Verdana",sans-serif}
-a{text-decoration:none;color:#eee}
+a{text-decoration:none;color:#e3e3e3}
 a:hover{text-decoration:underline}
 #container.jsReady .post-box{position:absolute;margin:0}
 .post-box{position:relative;display:none;margin:10px;width:300px;height:350px;border:none;-webkit-border-radius:5px;border-radius:5px;background-color:#444;-webkit-box-shadow:0 2px 4px #000;box-shadow:0 2px 4px #000;color:#ccc;text-shadow:0 -1px 0 #000;}
@@ -29,3 +29,10 @@ a:hover{text-decoration:underline}
 .ribbon-green{background-color:#62c462;background:-webkit-gradient(linear, left top, left bottom, color-stop(0, #62c462), color-stop(1, #51a351));background:-webkit-linear-gradient(top, #62c462 0%, #51a351 100%);background:-moz-linear-gradient(top, #62c462 0%, #51a351 100%);background:-o-linear-gradient(top, #62c462 0%, #51a351 100%);background:-ms-linear-gradient(top, #62c462 0%, #51a351 100%);background:linear-gradient(top, #62c462 0%, #51a351 100%)}
 .ribbon-yellow{background-color:#fbb450;background:-webkit-gradient(linear, left top, left bottom, color-stop(0, #fbb450), color-stop(1, #f89406));background:-webkit-linear-gradient(top, #fbb450 0%, #f89406 100%);background:-moz-linear-gradient(top, #fbb450 0%, #f89406 100%);background:-o-linear-gradient(top, #fbb450 0%, #f89406 100%);background:-ms-linear-gradient(top, #fbb450 0%, #f89406 100%);background:linear-gradient(top, #fbb450 0%, #f89406 100%)}
 .ribbon-wrapper{overflow:hidden;width:150px;height:150px;position:absolute;top:0;right:0;z-index:100}
+#privacy-policy{width:70%;margin:0 auto;}
+#privacy-policy> h1{font-size:30px}
+#privacy-policy h1{font-weight:bold}
+#privacy-policy ul{list-style-type:disc}
+#privacy-policy ul ul{list-style-type:circle}
+#privacy-policy ul ul ul{list-style-type:square}
+#privacy-policy li{margin-left:1em;margin-top:10px;margin-bottom:10px}
