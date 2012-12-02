@@ -12,6 +12,8 @@ exports.routes = function (map) {
     map.get('/login', 'top#login');
     map.get('/post/:slug', 'post#show');
 
+    map.get('/contributor/:slug', 'contributor#show');
+
     // Internal routes
     map.post('/internal/post/create', 'post#create');
     map.post('/internal/post/delete', 'post#delete');

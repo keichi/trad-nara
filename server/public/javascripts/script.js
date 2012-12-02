@@ -44,14 +44,16 @@ $(document).ready(function() {
     });
 
     $('.contributor .post-title a').click(function() {
-        $('.modal-contributor').fadeIn();
+        $('#modal-contributor').fadeIn('fast', function() {
+            $('#modal-contributor').load('/contributor/keichi-takahashi');
+        });
         $('#shade').fadeIn();
-
+            
         return false;
     });
 
     $('#shade').click(function() {
-        $('.modal-contributor').fadeOut();
+        $('#modal-contributor').fadeOut();
         $(this).fadeOut();
 
         return false;
