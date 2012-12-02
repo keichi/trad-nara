@@ -56,3 +56,9 @@ action('contributors', function() {
         title: "Contributors",
     });
 });
+
+action('privacyPolicy', function() {
+    render({
+        title: "Privacy Policy",
+    });
+});
