@@ -101,7 +101,8 @@ $(document).ready(function() {
         var _m = Math.floor((cw - cols * w) / (cols + 1));
 
         $container.css({
-            'height'    :   rows * (h + _m) - _m
+            'height'    :   rows * (h + _m) - _m,
+            // 'margin-top':   $('#header').height() + $('#navigation').height() + 20
         });
 
         $box.each(function(i){
