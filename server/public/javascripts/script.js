@@ -28,7 +28,7 @@ $(document).ready(function() {
         var url = root + $(this).attr('href');
         var like = $('.meta-like', $(this).parents('.post-box'));
         $.getJSON(
-            'https://graph.facebook.com/' + url + '&callback=?',
+            'https://graph.facebook.com/' + url + '?callback=?',
             function(data) {
                 var count = data.shares || 0;
                 like.append(String(count));
