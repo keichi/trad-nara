@@ -44,11 +44,17 @@ $(document).ready(function() {
     });
 
     $('.contributor .post-title a').click(function() {
-        $('#modal-contributor').fadeIn('fast', function() {
-            $('#modal-contributor').load('/contributor/keichi-takahashi');
-        });
-        $('#shade').fadeIn();
-            
+        $('#modal-contributor').load(
+            '/contributor/keichi-takahashi',
+            function(res, status, xhr) {
+                if (status === 'error') {
+                    alert('Please log in to view this content.');
+                    return;
+                }
+                $('#modal-contributor').fadeIn('fast');
+                $('#shade').fadeIn();
+            }
+        );
         return false;
     });
 
@@ -129,7 +135,7 @@ $(document).ready(function() {
                 dataType: 'json',
                 success: function( data, textStatus, jqXHR ) {
                     if (data.error) {
-                        alert('Failed to register to favorites!');
+                        alert('Please log in to register to favorites.');
                     } else {
                         star.toggleClass('icon-star-empty');
                         star.toggleClass('icon-star');
