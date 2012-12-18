@@ -94,7 +94,7 @@ $(document).ready(function() {
             top: 'auto', // Top position relative to parent in px
             left: 'auto', // Left position relative to parent in px
         };
-        $('#container').prepend('<div id="loading"></div>');
+        $container.prepend('<div id="loading"></div>');
         spinner = new Spinner(opts).spin($('#loading')[0]);
     }
 
@@ -103,12 +103,20 @@ $(document).ready(function() {
 
         var cw = initWidth || $container.width();
         var cols = Math.floor((cw + m) / (w + m));
+        var isMobile = false;
+        if (cols <= 0 ) {
+            cols = 1;
+            isMobile = true;
+        }
         var rows = Math.ceil( $box.size() / cols );
         var _m = Math.floor((cw - cols * w) / (cols + 1));
+        var _mp = _m;
+        if (isMobile) {
+            _mp += 25;
+        }
 
         $container.css({
-            'height'    :   rows * (h + _m) - _m,
-            // 'margin-top':   $('#header').height() + $('#navigation').height() + 20
+            'height'    :   rows * (h + _mp) - _mp
         });
 
         $box.each(function(i){
@@ -117,7 +125,7 @@ $(document).ready(function() {
             .fadeIn()
             .animate({
                 'left': Math.round((i % cols) * (w + _m)) + _m,
-                'top': Math.floor(i / cols) * (h + _m)
+                'top': Math.floor(i / cols) * (h + _mp)
             }, s + i * 30, 'easeOutBounce');
         });
 
