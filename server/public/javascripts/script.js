@@ -72,9 +72,9 @@ $(document).ready(function() {
             'top'   :   initHeight / 2 ,
         });
         $box.hover(function() {
-            $(this).animate({boxShadow: '0 0 20px #000'}, 300);
+            $(this).stop().animate({boxShadow: '0 0 20px #000'}, 300);
         }, function() {
-            $(this).animate({boxShadow: '0 1px 4px #000'}, 300);
+            $(this).stop().animate({boxShadow: '0 1px 4px #000'}, 300);
         });
 
         var opts = {
