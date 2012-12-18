@@ -23,6 +23,7 @@ a:hover{text-decoration:underline}
 .post-box .tag-yellow{background-color:#f89406}
 #loginlinks{text-align:center;}
 #loginlinks ul{list-style-type:none}
+#loginlinks img{width:100%;max-width:440px}
 #loading{margin:0 auto;width:200px;height:200px}
 .ribbon{-webkit-transform:rotate(45deg);-moz-transform:rotate(45deg);-o-transform:rotate(45deg);-ms-transform:rotate(45deg);transform:rotate(45deg);position:relative;left:3px;top:35px;width:200px;padding-top:6px;padding-bottom:6px;font-size:15px;font-weight:bold;text-align:center;text-transform:uppercase;color:#fff;-webkit-box-shadow:0 0 3px rgba(0,0,0,0.4);box-shadow:0 0 3px rgba(0,0,0,0.4);text-shadow:0 -1px 0 rgba(0,0,0,0.25)}
 .ribbon-blue{background-color:#5bc0de;background:-webkit-gradient(linear, left top, left bottom, color-stop(0, #5bc0de), color-stop(1, #2f96b4));background:-webkit-linear-gradient(top, #5bc0de 0%, #2f96b4 100%);background:-moz-linear-gradient(top, #5bc0de 0%, #2f96b4 100%);background:-o-linear-gradient(top, #5bc0de 0%, #2f96b4 100%);background:-ms-linear-gradient(top, #5bc0de 0%, #2f96b4 100%);background:linear-gradient(top, #5bc0de 0%, #2f96b4 100%)}
