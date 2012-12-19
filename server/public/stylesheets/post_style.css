@@ -3,7 +3,7 @@ a{text-decoration:none;color:#eee;}
 a:hover{color:#555}
 #contents{position:relative;width:74%;margin:0 auto;float:left;}
 #contents h1{font-size:2em;margin:10px 0 0 0;padding:.25em 0 .25em .5em;border-bottom:1px dotted #999;border-left:5px solid #999;font-family:"HelveticaNeueBlack","HelveticaNeue-Black","Helvetica Neue Black","HelveticaNeue","Helvetica Neue",'TeXGyreHerosBold',"Arial Black",sans-serif;font-weight:800;font-stretch:normal;line-height:1.5em}
-#contents .share{margin:5px;height:20px;}
+#contents .share{margin:5px;}
 #contents .share a{vertical-align:top}
 #contents .share .fb_iframe_widget{vertical-align:top}
 #contents .flexslider{margin:0 auto 30px auto}
