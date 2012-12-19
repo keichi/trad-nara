@@ -122,7 +122,7 @@ $(document).ready(function() {
         $box.each(function(i){
             $(this)
             .stop(true)
-            .fadeIn()
+            .css('display', 'block')
             .animate({
                 'left': Math.round((i % cols) * (w + _m)) + _m,
                 'top': Math.floor(i / cols) * (h + _mp)
