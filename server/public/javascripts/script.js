@@ -22,7 +22,11 @@ $(document).ready(function() {
         return false;
     });
 
-    $('.meta-favorite, .meta-view, .meta-comments, #navigation li a').powerTip();
+    if (document.ontouchstart === undefined) {
+        $('.meta-favorite, .meta-view, .meta-comments, #navigation li a').powerTip({
+            smartPlacement: true
+        });
+    }
 
     $('.title-author .post-title a', $box).each(function() {
         var url = root + $(this).attr('href');
