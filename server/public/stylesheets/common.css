@@ -31,7 +31,7 @@ body{background-color:#3b3f44;background-image:url("/images/bg.png");background-
 #modal-contributor .contributor-info{float:right;font-size:15px;padding:15px;width:350px;height:320px;overflow:scroll;color:#eee;}
 #modal-contributor .contributor-info h1{font-size:40px;font-weight:bold;display:block;text-shadow:0 -1px 0 #000}
 #modal-contributor .contributor-info p{text-indent:.5em;margin-top:1em;margin-bottom:1em;line-height:20px}
-@media screen and (max-width: 480px){#navigation li a{height:35px}
+@media screen and (max-width: 480px){#navigation li a{height:35px;margin-left:5px;margin-right:5px}
 #navigation li i{font-size:30px}
 #navigation li .nav-item{display:none}
 #header{position:relative;margin:0}
