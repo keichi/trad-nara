@@ -121,12 +121,12 @@ $(document).ready(function() {
 
         $box.each(function(i){
             $(this)
-            .stop(true)
+            .stop(true, true)
             .css('display', 'block')
             .animate({
                 'left': Math.round((i % cols) * (w + _m)) + _m,
                 'top': Math.floor(i / cols) * (h + _mp)
-            }, s + i * 30, 'easeOutBounce');
+            }, s + i * 30, 'easeOutExpo');
         });
 
         initWidth = undefined;
