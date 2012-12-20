@@ -61,14 +61,14 @@
     
         <div id="navigation">
             <ul>
-                <li><%- link_to('HOME', '/', {title: 'Order posts by popularity'}) %></li>
-                <li><%- link_to('TIMELINE', '/timeline', {title: 'Order posts by post date'}) %></li>
-                <li><%- link_to('FAVORITES', '/favorites', {title: 'View my favorite posts'}) %></li>
-                <li><%- link_to('CONTRIBUTORS', '/contributors', {title: 'Dedicated people who contributed to this project'}) %></li>
+                <li><%- link_to('<i class="icon-home"></i><span class="nav-item">HOME</span>', '/', {title: 'Order posts by popularity'}) %></li>
+                <li><%- link_to('<i class="icon-time"></i><span class="nav-item">TIMELINE</span>', '/timeline', {title: 'Order posts by post date'}) %></li>
+                <li><%- link_to('<i class="icon-star"></i><span class="nav-item">FAVORITES</span>', '/favorites', {title: 'View my favorite posts'}) %></li>
+                <li><%- link_to('<i class="icon-user"></i><span class="nav-item">CONTRIBUTORS</span>', '/contributors', {title: 'Dedicated people who contributed to this project'}) %></li>
                 <li><%if (user) { %>
-                    <%- link_to('LOGOUT', '/logout', {title: 'Logout from Trad Nara'}) %>
+                    <%- link_to('<i class="icon-signout"></i><span class="nav-item">LOGOUT</span>', '/logout', {title: 'Logout from Trad Nara'}) %>
                 <% } else { %>
-                    <%- link_to('LOGIN', '/login', {title: 'Login to Trad Nara'}) %>
+                    <%- link_to('<i class="icon-signin"></i><span class="nav-item">LOGIN</span>', '/login', {title: 'Login to Trad Nara'}) %>
                 <% } %>
                 </li>
             </ul>
