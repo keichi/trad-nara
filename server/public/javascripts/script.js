@@ -76,9 +76,9 @@ $(document).ready(function() {
             'top'   :   initHeight / 2 ,
         });
         $box.hover(function() {
-            $(this).stop().animate({boxShadow: '0 0 20px #000'}, 300);
+            $(this).stop(true, true).animate({boxShadow: '0 0 20px #000'}, 300);
         }, function() {
-            $(this).stop().animate({boxShadow: '0 1px 4px #000'}, 300);
+            $(this).stop(true, true).animate({boxShadow: '0 1px 4px #000'}, 300);
         });
 
         var opts = {
@@ -130,7 +130,7 @@ $(document).ready(function() {
             .animate({
                 'left': Math.round((i % cols) * (w + _m)) + _m,
                 'top': Math.floor(i / cols) * (h + _mp)
-            }, s + i * 30, 'easeOutExpo');
+            }, s + i * 50, 'easeOutExpo');
         });
 
         initWidth = undefined;
