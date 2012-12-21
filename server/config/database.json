@@ -1,10 +1,10 @@
 {
   "development": {
-    "driver": "mongoose",
+    "driver": "mongodb",
     "url": "mongodb://localhost/trad"
   },
   "production": {
-    "driver": "mongoose",
+    "driver": "mongodb",
     "url": "mongodb://localhost/trad"
   },
   "test": {
