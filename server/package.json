@@ -1,14 +1,23 @@
 { "name": "tradnara"
 , "version": "0.0.1"
-, "engines": ["node >= 0.4.0"]
+, "engines": ["node >= 0.8.0"]
 , "main": "server.js"
 , "dependencies":
   { "ejs":              "*"
   , "ejs-ext":          "*"
-  , "express":          "~2.x"
-  , "railway":          ">= 0.2.6"
+  , "ejs-ext":          "latest"
+  , "express":          "~3.x"
+  , "compound":         ">= 1.1.0"
   , "jugglingdb":       ">= 0.1.0"
   , "coffee-script":    ">= 1.1.1"
+  , "stylus":           "latest"
+  , "async":            "*"
+  , "underscore":       "*"
+  , "passport":         ">= 0.1.x"
+  , "passport-twitter": ">= 0.1.x"
+  , "passport-facebook":">= 0.1.x"
+  , "session-mongoose": "latest"
+  , "jugglingdb-mongodb": "latest"
   },
   "devDependencies":
   { "nodeunit":         "*"
