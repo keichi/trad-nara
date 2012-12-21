@@ -72,7 +72,7 @@ $(document).ready(function() {
         $container.addClass('jsReady');
         $box.css({
             'left'  :   initWidth / 2 - w / 2,
-            'top'   :   initHeight / 2 ,
+            'top'   :   initHeight / 2
         });
         $box.hover(function() {
             $(this).stop(true, true).animate({boxShadow: '0 0 20px #000'}, 300);
@@ -95,7 +95,7 @@ $(document).ready(function() {
             className: 'spinner', // The CSS class to assign to the spinner
             zIndex: 2e9, // The z-index (defaults to 2000000000)
             top: 'auto', // Top position relative to parent in px
-            left: 'auto', // Left position relative to parent in px
+            left: 'auto' // Left position relative to parent in px
         };
         $container.prepend('<div id="loading"></div>');
         spinner = new Spinner(opts).spin($('#loading')[0]);
