@@ -2,6 +2,9 @@ module.exports = function(compound, Image) {
 
 var async = require('async');
 
+var Post = compound.models.Post;
+Image.belongsTo(Post, {as: 'post', foreignKey: 'postId'});
+
 Image.changeToHttp = function(cb) {
 	Image.all(function(err, images) {
 		if (err) {cb(err);}

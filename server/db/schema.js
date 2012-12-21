@@ -61,16 +61,3 @@ var FavoriteRelation = describe('FavoriteRelation', function() {
     property('listRelationId', String);
     property('postRelationId', String);
 });
-
-Post.hasMany(Image, {as: 'images', foreignKey: 'postId'});
-Post.hasMany(FavoriteRelation, {as: 'favoriteRelations', foreignKey: 'postRelationId'});
-
-Image.belongsTo(Post, {as: 'post', foreignKey: 'postId'});
-
-FavoriteRelation.belongsTo(FavoriteList, {as: 'list', foreignKey: 'listRelationId'});
-FavoriteRelation.belongsTo(Post, {as: 'post', foreignKey: 'postRelationId'});
-
-FavoriteList.belongsTo(User, {as: 'user', foreignKey: 'userListId'});
-FavoriteList.hasMany(FavoriteRelation, {as: 'favoriteRelations', foreignKey: 'listRelationId'});
-
-User.hasMany(FavoriteList, {as: 'lists', foreignKey: 'userListId'});

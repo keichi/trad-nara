@@ -2,6 +2,9 @@ module.exports = function(compound, User) {
 
 var async = require('async');
 
+var FavoriteList = compound.models.FavoriteList;
+User.hasMany(FavoriteList, {as: 'lists', foreignKey: 'userListId'});
+
 User.afterCreate = function(next) {
 	this.lists.create(
 		{name: 'Default list'},
