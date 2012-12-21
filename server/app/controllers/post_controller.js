@@ -16,7 +16,7 @@ action('create', function () {
 
     async.waterfall([
         function(cb) {
-            Post.all({where: {wpPostId: data.id}}, cb);
+            Post.all({where: {wpPostId: parseInt(data.id)}}, cb);
         },
         function(results, cb) {
             var isNew = false;
