@@ -28,7 +28,7 @@ action('create', function () {
                 isNew = true;
             }
 
-            post.wpPostId = data.id;
+            post.wpPostId = parseInt(data.id);
             post.author = data.author;
             post.title = data.title;
             post.lead = data.lead;
