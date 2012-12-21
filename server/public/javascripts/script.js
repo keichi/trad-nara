@@ -11,8 +11,7 @@ $(document).ready(function() {
     var root = location.protocol + '//' + location.host;
 
     $('.post-box img').contenthover({
-        overlay_background  :   '#000',
-        overlay_opacity     :   0.8,
+        hover_class: 'post-image-overlay'
     });
 
     $('.top-scroll').click(function() {
