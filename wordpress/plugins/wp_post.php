@@ -74,7 +74,7 @@ function wpost_post_post($post_id){
 	foreach ($image_posts as $image) {
 		$meta = wp_get_attachment_metadata($image->ID);
 		$images[] = array(
-			'src' => $image->guid,
+			'src' => wp_get_attachment_image_src($image->ID, 'full'),
 			'width' => intval($meta['width']),
 			'height' => intval($meta['height']),
 			'title' => $image->post_title,
