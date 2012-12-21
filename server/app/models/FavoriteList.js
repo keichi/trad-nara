@@ -1,8 +1,7 @@
+module.exports = function(compound, FavoriteList) {
+
 var async = require('async');
 var _ = require('underscore');
-
-FavoriteList.belongsTo(User, {as: 'user', foreignKey: 'userListId'});
-FavoriteList.hasMany(FavoriteRelation, {as: 'favoriteRelations', foreignKey: 'listRelationId'});
 
 FavoriteList.prototype.getPosts = function(callback) {
 	this.favoriteRelations(function(err, relations) {
@@ -62,3 +61,5 @@ FavoriteList.prototype.existsPost = function(post, callback) {
 		}
 	);
 }
+
+};

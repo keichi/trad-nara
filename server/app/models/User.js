@@ -1,6 +1,6 @@
-var async = require('async');
+module.exports = function(compound, User) {
 
-User.hasMany(FavoriteList, {as: 'lists', foreignKey: 'userListId'});
+var async = require('async');
 
 User.afterCreate = function(next) {
 	this.lists.create(
@@ -28,3 +28,5 @@ User.prototype.hasFavorited = function(post, callback) {
 		);
 	});
 } ;
+
+};

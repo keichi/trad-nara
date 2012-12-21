@@ -1,8 +1,7 @@
+module.exports = function(compound, Post) {
+
 var _ = require('underscore');
 var async = require('async');
-
-Post.hasMany(Image, {as: 'images', foreignKey: 'postId'});
-Post.hasMany(FavoriteRelation, {as: 'favoriteRelations', foreignKey: 'postRelationId'});
 
 Post.beforeDestroy = function(next) {
 	this.images(function(err, images) {
@@ -65,4 +64,6 @@ Post.updateSlug = function(cb) {
 			}
 		);
 	});
+};
+
 };

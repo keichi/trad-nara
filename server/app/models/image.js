@@ -1,6 +1,6 @@
-var async = require('async');
+module.exports = function(compound, Image) {
 
-Image.belongsTo(Post, {as: 'post', foreignKey: 'postId'});
+var async = require('async');
 
 Image.changeToHttp = function(cb) {
 	Image.all(function(err, images) {
@@ -17,4 +17,6 @@ Image.changeToHttp = function(cb) {
 			}
 		);
 	});
+};
+
 };

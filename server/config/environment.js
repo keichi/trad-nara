@@ -1,36 +1,18 @@
+module.exports = function (compound) {
+
 var express = require('express');
-var mongoStore = require('session-mongoose');
+var mongoStore = require('session-mongoose')(express);
 var passport = require('passport');
 var TwitterStrategy = require('passport-twitter').Strategy;
 var FacebookStrategy = require('passport-facebook').Strategy;
 var stylus = require('stylus');
-var nib = require('nib');
+var app = compound.app;
 
 app.configure('production', function () {
     app.SITE_URL = 'http://trads-jp.com/';
 });
 app.configure('development', function () {
     app.SITE_URL = 'http://localhost:3000/';
-});
-
-app.configure('development', function () {
-	console.log(process.cwd() + '/stylus');
-	console.log(process.cwd() + '/public');
-
-
-	var stylusMiddleware = stylus.middleware({
-		src: process.cwd() + '/public', // .styl files are located in `/stylus`
-		dest: process.cwd() + '/public', // .styl resources are compiled `/css/*.css`
-		debug: true,
-		compile: function(str, path) { // optional, but recommended
-			return stylus(str)
-				.set('filename', path)
-				.set('warn', true)
-				.set('compress', true)
-				.use(nib());
-		}
-	});
-	app.use(stylusMiddleware);  
 });
 
 function findOrCreateUser(profile, done) {
@@ -94,11 +76,13 @@ passport.deserializeUser(function(userId, done) {
 app.configure(function(){
 	var cwd = process.cwd();
 	
+	app.use(compound.assetsCompiler.init());
 	app.use(express.static(cwd + '/public', {maxAge: 86400000}));
 	app.set('view engine', 'ejs');
 	app.set('view options', {complexNames: true});
 	app.set('jsDirectory', '/javascripts/');
 	app.set('cssDirectory', '/stylesheets/');
+	app.set('cssEngine', 'stylus');
 	app.use(express.bodyParser());
 	app.use(express.cookieParser());
 
@@ -132,3 +116,5 @@ app.configure(function(){
 
 	app.use(app.router);
 });
+
+};
