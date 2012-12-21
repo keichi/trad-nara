@@ -16,6 +16,8 @@ app.configure('development', function () {
 });
 
 function findOrCreateUser(profile, done) {
+	var User = compound.models.User;
+
  	User.findOne({where: {userId : profile.id}}, function(err, result) {
  		if (err) {
  			return done(err);
@@ -64,6 +66,8 @@ passport.serializeUser(function(user, done) {
 });
 
 passport.deserializeUser(function(userId, done) {
+	var User = compound.models.User;
+	
 	User.findOne({where: {userId: userId}}, function (err, user) {
 		// 第二引数をnullにしないとクッキーがクリアされないため
 		if (user == undefined) {
