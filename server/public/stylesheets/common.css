@@ -147,6 +147,8 @@ body {
 }
 #navigation li {
   display: inline-block;
+  zoom: 1;
+  *display: inline;
   background-color: #dadada;
   background: -webkit-gradient(linear, left top, left bottom, color-stop(0, #eee), color-stop(1, #bbb));
   background: -webkit-linear-gradient(top, #eee 0%, #bbb 100%);
