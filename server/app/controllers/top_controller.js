@@ -30,7 +30,7 @@ action('favorites', function() {
     if (!req.user) { return redirect('/login'); }
 
     req.user.lists(function(err, lists) {
-        if (err || lists.length <= 0) {redirect('/');}
+        if (err || lists.length <= 0) {return redirect('/');}
         var list = lists[0];
         
         list.getPosts(function(err, posts) {
