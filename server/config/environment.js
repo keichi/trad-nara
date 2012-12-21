@@ -18,7 +18,7 @@ app.configure('development', function () {
 function findOrCreateUser(profile, done) {
 	var User = compound.models.User;
 
- 	User.findOne({where: {userId : profile.id}}, function(err, result) {
+ 	User.findOne({where: {userId : String(profile.id)}}, function(err, result) {
  		if (err) {
  			return done(err);
  		}
@@ -26,7 +26,7 @@ function findOrCreateUser(profile, done) {
  			done(null, result);
  		} else {
  			User.create({
- 				userId : profile.id,
+ 				userId : String(profile.id),
  				name : profile.displayName,
  				userName : profile.username,
  				service : profile.provider,
