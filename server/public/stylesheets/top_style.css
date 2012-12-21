@@ -26,6 +26,7 @@ a:hover {
   box-shadow: 0 2px 4px #000;
   color: #ccc;
   text-shadow: 0 -1px 0 #000;
+  border: 1px solid #000;
 }
 .post-box img {
   border-top-right-radius: 3px;
