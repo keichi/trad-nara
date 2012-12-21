@@ -71,7 +71,7 @@ action('create', function () {
 
 action('delete', function () {
     Post.all(
-        {where: {wpPostId: req.body.id}},
+        {where: {wpPostId: parseInt(req.body.id)}},
         function(err, results) {
             _(results).each(function(result) {
                 result.destroy();
