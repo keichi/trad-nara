@@ -72,11 +72,11 @@ function wpost_post_post($post_id){
 	$images = array();
 	$topimage = NULL;
 	foreach ($image_posts as $image) {
-		$meta = wp_get_attachment_metadata($image->ID);
+		$meta = wp_get_attachment_image_src($image->ID, 'full');
 		$images[] = array(
-			'src' => $image->guid,
-			'width' => intval($meta['width']),
-			'height' => intval($meta['height']),
+			'src' => $meta['url'],
+			'width' => $meta['width'],
+			'height' => $meta['height'],
 			'title' => $image->post_title,
 			'caption' => $image->post_excerpt,
 			'description' => $image->content,
