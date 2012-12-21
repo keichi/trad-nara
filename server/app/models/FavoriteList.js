@@ -18,6 +18,7 @@ FavoriteList.prototype.getPosts = function(callback) {
 };
 
 FavoriteList.prototype.addPost = function(post, callback) {
+	var FavoriteRelation = compound.models.FavoriteRelation;
 	var relation = new FavoriteRelation();
 	var postId = typeof post == 'object' && 'id' in post ? post.id : post;
 	var listId = this.id;
@@ -33,6 +34,7 @@ FavoriteList.prototype.addPost = function(post, callback) {
 FavoriteList.prototype.removePost = function(post, callback) {
 	var postId = typeof post == 'object' && 'id' in post ? post.id : post;
 
+	var FavoriteRelation = compound.models.FavoriteRelation;
 	FavoriteRelation.all(
 		{where: {listRelationId: this.id, postRelationId: postId}},
 		function(err, relations) {
@@ -53,6 +55,7 @@ FavoriteList.prototype.removePost = function(post, callback) {
 FavoriteList.prototype.existsPost = function(post, callback) {
 	var postId = typeof post == 'object' && 'id' in post ? post.id : post;
 
+	var FavoriteRelation = compound.models.FavoriteRelation;
 	FavoriteRelation.findOne(
 		{where: {listRelationId: this.id, postRelationId: postId}},
 		function(err, relation) {
