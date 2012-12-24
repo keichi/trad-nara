@@ -40,19 +40,19 @@ action('create', function () {
             post.category = data.category;
             post.slug = createSlug(post.title);
 
-            if (data.topimage != undefined) {
+            if (data.topimage !== undefined) {
                post.topimage = data.topimage.src;
             }
 
-            post.save(function(err) {cb(null, post, isNew)});
+            post.save(function(err) {cb(null, post, isNew);});
         },
         function (post, isNew) {
-            if (data.images != undefined && 'length' in data.images) {
+            if (data.images !== undefined && 'length' in data.images) {
                 if (!isNew) {
                     post.images(function(err, images) {
                          _(images).each(function(image) {
                             image.destroy();
-                        })
+                        });
                     });
                 }
 
@@ -86,7 +86,7 @@ action('show', function () {
     layout('application');
 
     Post.findOne({where: {slug: req.params.slug}}, function(err, post) {
-        if (post == null) {
+        if (post === null) {
             redirect('/');
         } else {
             post.updateAttribute('viewCount', post.viewCount + 1, function() {});

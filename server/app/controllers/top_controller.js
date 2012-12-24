@@ -4,7 +4,7 @@ load('application');
 
 action('home', function () {
     Post.allWithFavorite({order: 'viewCount DESC'}, req.user, function(err, posts) {
-        if (err != null) {
+        if (err !== null) {
             console.log("Error querying posts: " + err);
         }
         render({
@@ -16,7 +16,7 @@ action('home', function () {
 
 action('timeline', function () {
     Post.allWithFavorite({order: 'created DESC'}, req.user, function(err, posts) {
-        if (err != null) {
+        if (err !== null) {
             console.log("Error querying posts: " + err);
         }
         render('home', {
@@ -47,24 +47,24 @@ action('favorites', function() {
 
 action('login', function() {
 	render({
-		title: "Login",
+		title: "Login"
 	});
 });
 
 action('contributors', function() {
     render({
-        title: "Contributors",
+        title: "Contributors"
     });
 });
 
 action('privacyPolicy', function() {
     render({
-        title: "Privacy Policy",
+        title: "Privacy Policy"
     });
 });
 
 action('contactTeam', function() {
     render({
-        title: "Contact Team",
+        title: "Contact Team"
     });
 });

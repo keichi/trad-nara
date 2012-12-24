@@ -1,4 +1,4 @@
-$(document).ready(function() {    
+$(document).ready(function() {
     var $container = $('#container');
     var $box = $('.post-box');
     var w = $box.width();
@@ -141,7 +141,7 @@ $(document).ready(function() {
             $.ajax({
                 url: '/favorites/switch',
                 data: {
-                    id: postId 
+                    id: postId
                 },
                 dataType: 'json',
                 success: function( data, textStatus, jqXHR ) {
@@ -158,9 +158,9 @@ $(document).ready(function() {
         });
     }
 
-    if ($('#loginlinks').length == 0 && $('#privacy-policy').length == 0 && $('#contact-team').length == 0) {
-      	// イベントの登録
-      	$(window).bind('load resize', layout);
+    if ($('#loginlinks').length === 0 && $('#privacy-policy').length === 0 && $('#contact-team').length === 0) {
+        // イベントの登録
+        $(window).bind('load resize', layout);
 
         init();
     }
