@@ -37,52 +37,50 @@ a:hover {
 #contents .flexslider {
   margin: 0px auto 30px auto;
 }
-#contents .post {
+p {
   font-size: 19px;
   line-height: 1.4em;
-}
-#contents .post p {
   font-family: "Vollkorn", serif;
   text-indent: 0.5em;
   margin: 1em 0;
   color: #ddd;
 }
-#contents .post p a {
+p a {
   text-decoration: underline;
   color: #fff;
 }
-#contents .post p a:hover {
+p a:hover {
   color: #e44a24;
 }
-#contents .post p.lead {
+p.lead {
   font-weight: bold;
 }
-#contents .post h1,
-#contents .post h2,
-#contents .post h3,
-#contents .post h4,
-#contents .post h5,
-#contents .post h6 {
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
   font-weight: bold;
   margin: 10px 0;
   color: #f0f0f0;
 }
-#contents .post h1 {
+h1 {
   font-size: 36px;
 }
-#contents .post h2 {
+h2 {
   font-size: 30px;
 }
-#contents .post h3 {
+h3 {
   font-size: 24px;
 }
-#contents .post h4 {
+h4 {
   font-size: 18px;
 }
-#contents .post h5 {
+h5 {
   font-size: 14px;
 }
-#contents .post h6 {
+h6 {
   font-size: 12px;
 }
 #mapinfo {
