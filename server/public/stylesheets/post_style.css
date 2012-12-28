@@ -1,7 +1,5 @@
 body {
-  font-family: "HelveticaNeueLight", "HelveticaNeue-Light", "Helvetica Neue Light", "HelveticaNeue", "Helvetica Neue", 'TeXGyreHerosRegular', "Helvetica", "Tahoma", "Geneva", "Arial", sans-serif;
-  font-weight: 300;
-  font-stretch: normal;
+  font-family: "Arimo", sans-serif;
 }
 a {
   text-decoration: none;
@@ -12,7 +10,7 @@ a:hover {
 }
 #contents {
   position: relative;
-  width: 74%;
+  width: 70%;
   margin: 0 auto;
   float: left;
 }
@@ -22,10 +20,10 @@ a:hover {
   padding: 0.25em 0em 0.25em 0.5em;
   border-bottom: 1px dotted #999;
   border-left: 5px solid #999;
-  font-family: "HelveticaNeueBlack", "HelveticaNeue-Black", "Helvetica Neue Black", "HelveticaNeue", "Helvetica Neue", 'TeXGyreHerosBold', "Arial Black", sans-serif;
   font-weight: 800;
   font-stretch: normal;
   line-height: 1.5em;
+  font-family: "Arimo", sans-serif;
 }
 #contents .share {
   margin: 5px;
@@ -40,12 +38,14 @@ a:hover {
   margin: 0px auto 30px auto;
 }
 #contents .post {
-  font-size: 14px;
-  line-height: 20px;
+  font-size: 19px;
+  line-height: 1.4em;
 }
 #contents .post p {
-  text-indent: 14px;
-  margin: 10px 0;
+  font-family: "Vollkorn", serif;
+  text-indent: 0.5em;
+  margin: 1em 0;
+  color: #ddd;
 }
 #contents .post p a {
   text-decoration: underline;
@@ -69,27 +69,21 @@ a:hover {
 }
 #contents .post h1 {
   font-size: 36px;
-  line-height: 40px;
 }
 #contents .post h2 {
   font-size: 30px;
-  line-height: 40px;
 }
 #contents .post h3 {
   font-size: 24px;
-  line-height: 40px;
 }
 #contents .post h4 {
   font-size: 18px;
-  line-height: 20px;
 }
 #contents .post h5 {
   font-size: 14px;
-  line-height: 20px;
 }
 #contents .post h6 {
   font-size: 12px;
-  line-height: 20px;
 }
 #mapinfo {
   display: none;
