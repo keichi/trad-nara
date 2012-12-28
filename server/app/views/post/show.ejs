@@ -1,5 +1,9 @@
 <div id="contents">
-    <h1><a href="#" title="Hello world!"><%= post.title %></a></h1>         
+    <h1><a href="#" title="Hello world!"><%= post.title %></a></h1>
+    <div class="info">
+        by <a href="#"><%= post.author %></a> at <%= format_date(post.created) %>
+    </div>
+
     <div class="share">
         <fb:like send="false" layout="button_count" width="100" show_faces="false" colorscheme="light"></fb:like>
         <a href="https://twitter.com/share" class="twitter-share-button">Tweet</a>
@@ -43,10 +47,6 @@
     </script>
     <noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
     <a href="http://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
-                
-    <div class="info">
-    Written by the Trad Nara reporter <a href="#"><%= post.author %></a>, and posted on the <a href="#"><%= post.created %></a>.
-    </div>
 </div>
 <div id="sidebar">
     <ul>
