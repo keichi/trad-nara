@@ -1,5 +1,5 @@
 body {
-  font-family: "Vollkorn", serif;
+  font-family: "Arimo", serif;
 }
 a {
   text-decoration: none;
@@ -34,7 +34,6 @@ h6 {
   font-weight: bold;
   margin: 0.7em 0;
   color: #f0f0f0;
-  font-family: "Arimo", sans-serif;
 }
 h1 {
   font-size: 36px;
@@ -63,17 +62,20 @@ h6 {
 #contents h1 {
   margin: 15px 0px;
 }
-#contents .share {
-  margin: 5px;
+.share {
+  margin: 10px 5px;
 }
-#contents .share a {
+.share a {
   vertical-align: top;
 }
-#contents .share .fb_iframe_widget {
+.share .fb_iframe_widget {
   vertical-align: top;
 }
-#contents .flexslider {
+.flexslider {
   margin: 0px auto 30px auto;
+}
+.post {
+  font-family: "Vollkorn", serif;
 }
 #mapinfo {
   display: none;
@@ -101,17 +103,21 @@ h6 {
   font-size: 0.8em;
   color: #eee;
 }
-#contents .info {
-  font-family: "Arimo", sans-serif;
-  font-size: 20px;
+.info {
+  font-size: 16px;
   color: #888;
   border-bottom: 1px solid #000;
   -webkit-box-shadow: 0 1px 0 rgba(255,255,255,0.2);
   box-shadow: 0 1px 0 rgba(255,255,255,0.2);
-}
-#contents .info a {
   color: #fff;
+  padding-bottom: 5px;
+}
+.info a {
   text-decoration: none;
+}
+.info .weak {
+  color: #787878;
+  font-style: italic;
 }
 #contents .post > ul,
 #contents .post > ol {

@@ -94,6 +94,7 @@ body {
   background-image: url("/images/bg.png");
   background-attachment: scroll;
   color: #d0d0d0;
+  font-family: "Arimo", sans-serif;
 }
 #wrapper {
   margin-top: 5px;
@@ -106,7 +107,6 @@ body {
   width: 90%;
 }
 #footer {
-  font-family: "Arimo", sans-serif;
   border-top: 1px solid #000;
   -webkit-box-shadow: 0 1px 0 rgba(255,255,255,0.2) inset;
   box-shadow: 0 1px 0 rgba(255,255,255,0.2) inset;
@@ -127,7 +127,6 @@ body {
   margin: 2px auto;
 }
 #navigation {
-  font-family: "Arimo", sans-serif;
   position: fixed;
   top: 50px;
   left: 0;

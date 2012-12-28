@@ -1,7 +1,7 @@
 <div id="contents">
     <h1><a href="#" title="Hello world!"><%= post.title %></a></h1>
     <div class="info">
-        by <a href="#"><%= post.author %></a> at <%= format_date(post.created) %>
+        <span class="weak">by </span><a href="#"><%= post.author %></a><span class="weak">, at </span><%= format_date(post.created) %>
     </div>
 
     <div class="share">
