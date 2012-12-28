@@ -68,6 +68,9 @@ a:hover {
   vertical-align: middle;
   font-size: 1em;
 }
+.meta a {
+  text-decoration: none;
+}
 .meta-stats {
   display: inline-block;
   padding-top: 10px;
@@ -80,7 +83,6 @@ a:hover {
 .meta-stats a {
   margin-right: 5px;
   color: #e8e8e8;
-  text-decoration: none;
 }
 .meta-stats i {
   margin-right: 5px;
@@ -92,7 +94,6 @@ a:hover {
   padding-bottom: 5px;
   width: 50px;
   text-align: center;
-  text-decoration: none;
 }
 .meta-favorite i {
   color: #e9a735;
