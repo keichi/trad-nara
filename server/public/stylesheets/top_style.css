@@ -32,7 +32,7 @@ a:hover {
   border-top-right-radius: 3px;
   border-top-left-radius: 3px;
 }
-.post-box .contenthover {
+.contenthover {
   display: none;
   padding: 20px;
   background-image: url("/images/quote.png");
@@ -42,7 +42,7 @@ a:hover {
   font-style: italic;
   line-height: 1.2em;
 }
-.post-box .title-author {
+.title-author {
   margin-top: 20px;
   margin-right: 20px;
   margin-left: 20px;
@@ -51,24 +51,24 @@ a:hover {
   -webkit-box-shadow: 0 1px 0 rgba(255,255,255,0.2);
   box-shadow: 0 1px 0 rgba(255,255,255,0.2);
 }
-.post-box .title-author h2.post-title a {
+.title-author h2.post-title a {
   color: #eee;
   font-size: 1.2em;
 }
-.post-box .title-author .post-author {
+.title-author .post-author {
   margin: 10px auto;
   color: #eee;
 }
-.post-box .title-author .post-author-by {
+.title-author .post-author-by {
   color: #888;
   font-style: italic;
 }
-.post-box .meta {
+.meta {
   margin: 0px 20px 0px 20px;
   vertical-align: middle;
   font-size: 1em;
 }
-.post-box .meta .meta-stats {
+.meta-stats {
   display: inline-block;
   padding-top: 10px;
   padding-bottom: 10px;
@@ -77,16 +77,16 @@ a:hover {
   -webkit-box-shadow: -1px 0 0 rgba(255,255,255,0.2) inset;
   box-shadow: -1px 0 0 rgba(255,255,255,0.2) inset;
 }
-.post-box .meta .meta-stats a {
+.meta-stats a {
   margin-right: 5px;
   color: #e8e8e8;
   text-decoration: none;
 }
-.post-box .meta .meta-stats i {
+.meta-stats i {
   margin-right: 5px;
   color: #e8e8e8;
 }
-.post-box .meta .meta-favorite {
+.meta-favorite {
   display: inline-block;
   padding-top: 5px;
   padding-bottom: 5px;
@@ -94,7 +94,7 @@ a:hover {
   text-align: center;
   text-decoration: none;
 }
-.post-box .meta .meta-favorite i {
+.meta-favorite i {
   color: #e9a735;
   font-size: 20px;
 }
